@@ -16,5 +16,17 @@ RSpec.describe 'Album Index Page' do
     @artist_3 = Artist.create!(name: 'Earl Sweatshirt', age: 27, genre: 'Rap', currently_touring: false)
 
     @album_6 = Artist.create!(name: 'Some Rap Songs', number_of_songs: 15, nominated: false)
+
+    visit '/albums'
   end    
+  
+  # User Story 3
+  it 'I see each Child in the system including the Childs attributes' do
+
+    expect(page).to have_content(@album_1.name)
+    expect(page).to have_content(@album_1.number_of_songs)
+    expect(page).to have_content(@album_1.nominated)
+
+    expect(page).to have_content(@album_2)
+  end
 end
