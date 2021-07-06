@@ -9,7 +9,7 @@ RSpec.describe 'Artist Show Page' do
     @album_2 = @artist.albums.create!(name: 'Because the Internet', number_of_songs: 19, nominated: false)
     @album_3 = @artist.albums.create!(name: 'Camp', number_of_songs: 13, nominated: false)
 
-    visit "/arists/#{@artist.id}" 
+    visit "/artists/#{@artist.id}" 
   end      
   
   # User Story 2
