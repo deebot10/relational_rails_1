@@ -32,13 +32,13 @@ Rails.application.routes.draw do
 
   #D
   #Artist Routes
-  get '/artists',     to: 'artists#index'
-  get '/artists/:id', to: 'artists#show'
+  get '/artists',            to: 'artists#index'
+  get '/artists/:id',        to: 'artists#show'
   #Album Routes
-  get '/albums',      to: 'albums#index'
-  get 'albums/:id',       to: 'albums#show'
+  get '/albums',             to: 'albums#index'
+  get 'albums/:id',          to: 'albums#show'
   #Hits (Artist_Albums)
-  
+  get '/artists/:id/albums', to: 'hits#index'
 
 
 
