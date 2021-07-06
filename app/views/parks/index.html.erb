@@ -1,0 +1,11 @@
+<h1>Parks Index List</h1>
+
+<% @parks.each do |park| %>
+
+  <p><%= park.name %></p>
+  <p><%= park.camping_allowed %></p>
+  <p><%= park.kayaking_available %></p>
+  <p><%= park.park_rating %></p>
+  <p><%= park.state_id %></p>
+  <p><%= park.id %></p>
+<% end %>

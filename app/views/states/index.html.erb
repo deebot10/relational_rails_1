@@ -1,5 +1,8 @@
 <h1>States Index List</h1>
 
 <% @states.each do |state| %>
-  <p><%= state %></p>
+
+  <p><%= state.name %></p>
+  <p><%= state.region %></p>
+  <p><%= state.military_discount %></p>
 <% end %>
