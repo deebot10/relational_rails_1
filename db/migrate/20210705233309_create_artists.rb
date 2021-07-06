@@ -6,7 +6,7 @@ class CreateArtists < ActiveRecord::Migration[5.2]
       t.string :genre
       t.boolean :currently_touring
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

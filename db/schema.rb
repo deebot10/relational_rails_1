@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2021_07_05_233926) do
     t.integer "age"
     t.string "genre"
     t.boolean "currently_touring"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "albums", "artists"
