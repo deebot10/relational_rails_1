@@ -1,0 +1,7 @@
+<h1>Album Index</h1>
+
+<% @albums.each do |album|%>
+  <p>Name:<%= album.name%></p>
+  <p>Number or Tracks<%= album.number_of_songs%><p>
+  <p>Nominated:<%= album.nominated%></p>
+<%end%>

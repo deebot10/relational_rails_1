@@ -27,6 +27,24 @@ RSpec.describe 'Album Index Page' do
     expect(page).to have_content(@album_1.number_of_songs)
     expect(page).to have_content(@album_1.nominated)
 
-    expect(page).to have_content(@album_2)
+    expect(page).to have_content(@album_2.name)
+    expect(page).to have_content(@album_2.number_of_songs)
+    expect(page).to have_content(@album_2.nominated)
+
+    expect(page).to have_content(@album_3.name)
+    expect(page).to have_content(@album_3.number_of_songs)
+    expect(page).to have_content(@album_3.nominated)
+
+    expect(page).to have_content(@album_4.name)
+    expect(page).to have_content(@album_4.number_of_songs)
+    expect(page).to have_content(@album_4.nominated)
+
+    expect(page).to have_content(@album_5.name)
+    expect(page).to have_content(@album_5.number_of_songs)
+    expect(page).to have_content(@album_5.nominated)
+
+    expect(page).to have_content(@album_6.name)
+    expect(page).to have_content(@album_6.number_of_songs)
+    expect(page).to have_content(@album_6.nominated)
   end
 end
