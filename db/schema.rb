@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_05_233926) do
+ActiveRecord::Schema.define(version: 2021_07_06_150005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,5 +34,25 @@ ActiveRecord::Schema.define(version: 2021_07_05_233926) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "parks", force: :cascade do |t|
+    t.string "name"
+    t.boolean "camping_allowed"
+    t.boolean "kayaking_available"
+    t.float "park_rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "state_id"
+    t.index ["state_id"], name: "index_parks_on_state_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "region"
+    t.boolean "military_discount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "albums", "artists"
+  add_foreign_key "parks", "states"
 end
