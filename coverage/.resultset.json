@@ -302,8 +302,23 @@
           1,
           null
         ]
+      },
+      "/Users/dee/turing/2.0module/projects/relational_rails_1/app/controllers/artists_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/dee/turing/2.0module/projects/relational_rails_1/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1625539356
+    "timestamp": 1625539465
   }
 }
