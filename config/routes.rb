@@ -37,7 +37,8 @@ Rails.application.routes.draw do
   #Album Routes
   get '/albums',      to: 'albums#index'
   get 'albums/:id',       to: 'albums#show'
-
+  #Hits (Artist_Albums)
+  
 
 
 
