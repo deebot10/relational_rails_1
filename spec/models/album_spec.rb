@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Artist do
+RSpec.describe Album do
   describe 'relationships' do
-    it {should have_many(:albums)}    
+    it {should belong_to(:artist)}    
   end
-  
+
   describe 'instance methods'    
   describe 'class methods'
   describe 'validations'
