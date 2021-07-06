@@ -278,8 +278,44 @@
           1,
           null
         ]
+      },
+      "/Users/dee/turing/2.0module/projects/relational_rails_1/app/models/album.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/dee/turing/2.0module/projects/relational_rails_1/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/dee/turing/2.0module/projects/relational_rails_1/spec/models/artist_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/dee/turing/2.0module/projects/relational_rails_1/app/models/artist.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1625536165
+    "timestamp": 1625536923
   }
 }
