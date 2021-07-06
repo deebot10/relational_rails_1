@@ -23,9 +23,19 @@ Rails.application.routes.draw do
 
 
 
+
+
+
+
+
   #D
+  #Artist Routes
+  get '/artists', to: 'artists#index'
   
 
+
+
+  
 
 
 end
