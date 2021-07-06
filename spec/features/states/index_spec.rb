@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'State' do
   describe 'visit state index' do
     before(:each) do
+      State.destroy_all
       @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true)
       @state_2 = State.create!(name: 'Maine', region: 'Northeast', military_discount: true)
       @state_3 = State.create!(name: 'Washington', region: 'Northwest', military_discount: false)
