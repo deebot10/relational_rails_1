@@ -7,4 +7,11 @@ RSpec.describe 'Album Show' do
 
     visit "/albums/#{@album_1.id}" 
   end     
+
+    # User Story 4
+  it 'visit the album show page' do 
+    expect(page).to have_content(@album_1.name)
+    expect(page).to have_content(@album_1.number_of_songs)
+    expect(page).to have_content(@album_1.nominated)
+  end
 end
