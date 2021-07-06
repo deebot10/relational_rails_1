@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #State routes
   get '/states', to: 'states#index'
   get '/', to: 'welcome#index'
+  get '/states/:id', to: 'states#show'
 
 
 
