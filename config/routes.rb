@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   #Artist Routes
   get '/artists', to: 'artists#index'
   get '/artists/:id', to: 'artists#show'
+  #Album Routes
+  get '/albums', to: 'albums#index'
 
 
 

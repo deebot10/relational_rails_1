@@ -15,7 +15,7 @@ RSpec.describe 'Album Index Page' do
 
     @artist_3 = Artist.create!(name: 'Earl Sweatshirt', age: 27, genre: 'Rap', currently_touring: false)
 
-    @album_6 = Artist.create!(name: 'Some Rap Songs', number_of_songs: 15, nominated: false)
+    @album_6 = @artist_3.albums.create!(name: 'Some Rap Songs', number_of_songs: 15, nominated: false)
 
     visit '/albums'
   end    
