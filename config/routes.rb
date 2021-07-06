@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #B
   #State routes
   get '/states', to: 'states#index'
-
+  get '/', to: 'welcome#index'
 
 
 
