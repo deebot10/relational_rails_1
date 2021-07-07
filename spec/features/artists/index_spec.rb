@@ -17,4 +17,12 @@ RSpec.describe 'Artist index page' do
     expect(page).to have_content(@artist_3.name)
     expect(page).to have_content(@artist_4.name)
   end    
+
+  #User Story 6 
+  it 'Shows the created_at for each record' do
+    expect(page).to have_content(@artist_1.created_at)
+    expect(page).to have_content(@artist_2.created_at)
+    expect(page).to have_content(@artist_3.created_at)
+    expect(page).to have_content(@artist_4.created_at)
+  end
 end 
