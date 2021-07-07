@@ -11,12 +11,7 @@ RSpec.describe 'Hits Index' do
     visit "/artists/#{@artist.id}/albums"
   end 
   
-    #   User Story 5, Parent Children Index (x2)
-
-    # As a visitor
-    # When I visit '/parents/:parent_id/child_table_name'
-    # Then I see each Child that is associated with that Parent with each Child's attributes:
-
+    #User Story 5
   it 'shows every album by an artist' do
     expect(page).to have_content(@artist.name)
 
