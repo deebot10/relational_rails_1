@@ -37,6 +37,8 @@ Learning goals and areas of focus consisted of:
 ### <ins>Tools Used</ins>
 - Ruby 2.7.2
 - Rails 5.2.6
+- PostgresQL
+- Postico
 - Capybara
 - Launchy
 - HTML
