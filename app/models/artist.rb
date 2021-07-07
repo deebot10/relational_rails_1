@@ -1,7 +1,7 @@
 class Artist < ApplicationRecord
   has_many :albums     
   
-  # def order
-      
-  # end
+  def self.order_created
+    order(created_at: :desc)      
+  end
 end
