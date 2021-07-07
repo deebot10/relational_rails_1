@@ -17,9 +17,6 @@ RSpec.describe Artist do
     it 'Sorts all the parent records by most recently created' do
     
       expect(Artist.order_created).to eq([@artist_4, @artist_3, @artist_2, @artist_1])
-
-      # expect(@artist_4.name).to appear_before(@artist_3.name)
-
     end    
   end
   describe 'instance methods'     
