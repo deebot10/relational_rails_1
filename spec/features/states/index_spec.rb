@@ -14,6 +14,7 @@ RSpec.describe 'State' do
       expect(page).to have_content(@state_1.name)
       expect(page).to have_content(@state_2.region)
       expect(page).to have_content(@state_3.military_discount)
+      save_and_open_page
     end
   end
 end
