@@ -2,7 +2,9 @@
 
 <% @states.each do |state| %>
 
-  <p><%= state.name %></p>
-  <p><%= state.region %></p>
-  <p><%= state.military_discount %></p>
+  <h2><%= state.name %></h2>
+  <ul>
+    <li>Region of Country: <%= state.region %></li>
+    <li><%= state.name %> has a military discount for camping: <%= state.military_discount %></li>
+  </ul>
 <% end %>
