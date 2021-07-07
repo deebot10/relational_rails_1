@@ -41,6 +41,7 @@ Learning goals and areas of focus consisted of:
 - Postico
 - Capybara
 - Launchy
+- SimpleCov
 - HTML
 - CSS
 - Bootstrap
@@ -49,9 +50,6 @@ Learning goals and areas of focus consisted of:
 - Atom
 - VS Code
 - GitHub
-- HoundCI
-- SpecHarness
-- SimpleCov
 
 ### <ins>Contributors</ins>
 
