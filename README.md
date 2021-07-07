@@ -6,7 +6,7 @@
 [![Issues][issues-shield]][issues-url]
 # Welcome to Relational Rails - A database driven web application
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/74567704/124805908-1e01ff80-df2a-11eb-92bc-3a1536aa9c84.png"/>
+  <img src="https://user-images.githubusercontent.com/74567704/124805908-1e01ff80-df2a-11eb-92bc-3a1536aa9c84.png" alt="Relational Rails Welcome"/>
 </p>
 
 <!-- ![Relational Rails Welcome Screen](https://user-images.githubusercontent.com/74567704/124805908-1e01ff80-df2a-11eb-92bc-3a1536aa9c84.png) -->
