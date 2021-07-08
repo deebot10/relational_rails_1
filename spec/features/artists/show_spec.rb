@@ -24,4 +24,9 @@ RSpec.describe 'Artist Show Page' do
     expect(page).to_not have_content(@dee.genre)
     expect(page).to_not have_content(@dee.currently_touring)
   end
+  
+  # User Story 7
+  it 'shows the number of artist albums' do
+    expect(page).to have_content("Number of Albums: #{@artist.album_count}")  
+  end
 end
