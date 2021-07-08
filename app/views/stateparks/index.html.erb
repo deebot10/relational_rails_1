@@ -1,0 +1,8 @@
+<h1>Parks located in <%= @states.name %></h1>
+
+<% @parks.each do |park| %>
+<h2><%= park.name %></h2>
+<p>Camping allowed? <%= park.camping_allowed %></p>
+<p>Kayaking available? <%= park.kayaking_available %></p>
+<p>Overall park rating: <%= park.park_rating %></p>
+<% end %>
