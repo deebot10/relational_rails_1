@@ -4,7 +4,7 @@ RSpec.describe 'StateParks' do
   describe 'visit state index' do
 
     it 'has the ability to read state content' do
-      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true)
+      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
       @park_1 = @state_1.parks.create!(name: 'Ginny Springs', camping_allowed: true, kayaking_available: true, park_rating: 4.6)
       @park_2 = @state_1.parks.create!(name: 'Collier-Seminole State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.4)
 
@@ -15,7 +15,7 @@ RSpec.describe 'StateParks' do
     end
 
     it 'has the ability to read state content' do
-      @state_2 = State.create!(name: 'Maine', region: 'Northeast', military_discount: true)
+      @state_2 = State.create!(name: 'Maine', region: 'Northeast', military_discount: true, green_rank: 3)
       @park_3 = @state_2.parks.create!(name: 'Sebago Lake State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.7)
       @park_4 = @state_2.parks.create!(name: "Wolfe's Neck Woods State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.5)
 
@@ -25,5 +25,22 @@ RSpec.describe 'StateParks' do
       expect(page).to have_content("Kayaking available? #{@park_3.kayaking_available}")
       expect(page).to have_content(@park_3.camping_allowed)
     end
+
+    it 'has a link to the list of states' do
+      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
+      visit "/states/#{@state_1.id}/parks"
+      expect(page).to have_link('States')
+      click_link 'States'
+      expect(current_path).to eq('/states')
+    end
+
+    it 'has a link to the list of parks' do
+      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
+      visit "/states/#{@state_1.id}/parks"
+      expect(page).to have_link('Parks')
+      click_link 'Parks'
+      expect(current_path).to eq('/parks')
+    end
+
   end
 end

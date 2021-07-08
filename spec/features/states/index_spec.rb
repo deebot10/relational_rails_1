@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'State' do
   describe 'visit state index' do
     before(:each) do
-      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true)
-      @state_2 = State.create!(name: 'Maine', region: 'Northeast', military_discount: true)
-      @state_3 = State.create!(name: 'Washington', region: 'Northwest', military_discount: false)
+      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
+      @state_2 = State.create!(name: 'Maine', region: 'Northeast', military_discount: true, green_rank: 3)
+      @state_3 = State.create!(name: 'Washington', region: 'Northwest', military_discount: false, green_rank: 12)
       visit '/states'
     end
 
@@ -13,6 +13,7 @@ RSpec.describe 'State' do
       expect(page).to have_content(@state_1.name)
       expect(page).to have_content(@state_2.region)
       expect(page).to have_content(@state_3.military_discount)
+      expect(page).to have_content(@state_3.green_rank)
     end
 
     it 'orders the states by the most recently created' do
@@ -24,6 +25,18 @@ RSpec.describe 'State' do
       expect(this).to appear_before(that)
       expect(that).to appear_before(other)
 
+    end
+
+    it 'has a link to the list of states' do
+      expect(page).to have_link('States')
+      click_link 'States'
+      expect(current_path).to eq('/states')
+    end
+
+    it 'has a link to the list of parks' do
+      expect(page).to have_link('Parks')
+      click_link 'Park'
+      expect(current_path).to eq('/parks')
     end
 
 
