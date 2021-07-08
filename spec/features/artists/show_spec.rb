@@ -29,16 +29,19 @@ RSpec.describe 'Artist Show Page' do
   it 'shows the number of artist albums' do
     expect(page).to have_content("Number of Albums: #{@artist.album_count}")
   end
-
-  it 'has a link to the list of albums' do
-    expect(page).to have_link('Albums')
-    click_link 'Albums'
-    expect(current_path).to eq('/albums')
-  end
-
+  
+  # User Story 8
   it 'has a link to the list of artists' do
     expect(page).to have_link('Artists')
     click_link 'Artists'
     expect(current_path).to eq('/artists')
   end
+  
+  # User Story 9 
+  it 'has a link to the list of albums' do
+    expect(page).to have_link('Albums')
+    click_link 'Albums'
+    expect(current_path).to eq('/albums')
+  end
+  
 end
