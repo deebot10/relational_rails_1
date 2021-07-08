@@ -1,10 +1,14 @@
+<section id='display'>
 <h1>This is the page for <%= "#{@state.name}" %>.</h1>
+<h3><a href=<%="/states/#{@state.id}/parks"%>>State Parks in <%= "#{@state.name}" %></a></h3>
 <h3>It is located in the <%= "#{@state.region}" %> region.</h3>
 <% if @state.military_discount == true %>
 <h3>It has a military discount for camping reservations!</h3>
 <% elsif @state.military_discount == false %>
 <h3>It does not have a military discount for camping reservations.</h3>
 <% end %>
+</section>
+
 
 <p>This state has an environmental ranking of: <%= @state.green_rank %>
 <p>Number of Parks in this State: <%= @state.parks_count %></p>
