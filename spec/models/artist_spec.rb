@@ -24,11 +24,12 @@ RSpec.describe Artist do
     end    
   end
 
-  describe 'instance methods'  
+  describe 'instance methods'
+    # User Story 7  
     it 'counts the number of artist albums' do
 
       expect(@artist_1.album_count).to eq(3)
     end   
-    
+
   describe 'validations'
 end

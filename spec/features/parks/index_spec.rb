@@ -22,7 +22,6 @@ RSpec.describe 'Park' do
       expect(page).to have_content(@park_1.kayaking_available)
       expect(page).to have_content(@park_1.park_rating)
       expect(page).to have_content(@park_1.state_id)
-      save_and_open_page
     end
   end
 end
