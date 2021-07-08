@@ -25,5 +25,22 @@ RSpec.describe 'StateParks' do
       expect(page).to have_content("Kayaking available? #{@park_3.kayaking_available}")
       expect(page).to have_content(@park_3.camping_allowed)
     end
+
+    it 'has a link to the list of states' do
+      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
+      visit "/states/#{@state_1.id}/parks"
+      expect(page).to have_link('States')
+      click_link 'States'
+      expect(current_path).to eq('/states')
+    end
+
+    it 'has a link to the list of parks' do
+      @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
+      visit "/states/#{@state_1.id}/parks"
+      expect(page).to have_link('Parks')
+      click_link 'Parks'
+      expect(current_path).to eq('/parks')
+    end
+
   end
 end

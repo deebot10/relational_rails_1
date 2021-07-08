@@ -21,5 +21,18 @@ RSpec.describe 'State' do
     it 'shows the number of parks associated with the state' do
       expect(page).to have_content("Number of Parks in this State: #{@state_1.parks.count}")
     end
+
+    it 'has a link to the list of states' do
+      expect(page).to have_link('States')
+      click_link 'States'
+      expect(current_path).to eq('/states')
+    end
+
+    it 'has a link to the list of parks' do
+      expect(page).to have_link('Parks')
+      click_link 'Park'
+      expect(current_path).to eq('/parks')
+    end
+
   end
 end

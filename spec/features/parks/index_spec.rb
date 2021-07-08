@@ -24,5 +24,17 @@ RSpec.describe 'Park' do
       expect(page).to have_content(@park_1.state_id)
 
     end
+
+    it 'has a link to the list of states' do
+      expect(page).to have_link('States')
+      click_link 'States'
+      expect(current_path).to eq('/states')
+    end
+
+    it 'has a link to the list of parks' do
+      expect(page).to have_link('Parks')
+      click_link 'Park'
+      expect(current_path).to eq('/parks')
+    end
   end
 end
