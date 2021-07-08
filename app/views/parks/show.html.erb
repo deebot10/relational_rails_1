@@ -1,0 +1,25 @@
+<h1>This is the page for <%= "#{@park.name}" %>.</h1>
+<h3>It is located in the great state of <%= "#{@park.state.name}" %>, which is in the <%= "#{@park.state.region}" %> region of the country.</h3>
+<% if @park.camping_allowed == true %>
+<h3>You can camp at this park!</h3>
+<% elsif @park.camping_allowed == false %>
+<h3>You're not allowed to camp at this state park.</h3>
+<% end %>
+
+<% if @park.kayaking_available == true %>
+<h3>You can kayak at this park!</h3>
+<% elsif @park.kayaking_available == false %>
+<h3>You aren't able to kayak at this park.</h3>
+<% end %>
+
+<% if @park.kayaking_available == false || @park.camping_allowed == false %>
+<h3>Regardless,</h3>
+<% end %>
+
+<% if @park.park_rating >= 4.6 %>
+<h3>It's well worth the visit, as it's rating is <%="#{@park.park_rating}"%> out of 5!</h3>
+<% elsif @park.park_rating > 4.0 && @park.park_rating < 4.6 %>
+<h3>It's probably worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</h3>
+<% elsif @park.park_rating < 4.0 %>
+<h3>It might be worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</h3>
+<% end %>
