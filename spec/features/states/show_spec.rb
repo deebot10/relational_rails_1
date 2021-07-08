@@ -29,9 +29,19 @@ RSpec.describe 'State' do
     end
 
     it 'has a link to the list of parks' do
-      expect(page).to have_link('Parks')
-      click_link 'Park'
-      expect(current_path).to eq('/parks')
+      within('section#nav') do
+        expect(page).to have_link("Parks")
+        click_link "Park"
+        expect(current_path).to eq('/parks')
+      end
+    end
+
+    it 'has a link to all of the parks in that state' do
+      within('section#display') do
+        expect(page).to have_link("State Parks in #{@state_1.name}")
+        click_link "State Parks in #{@state_1.name}"
+        expect(current_path).to eq("/states/#{@state_1.id}/parks")
+      end
     end
 
   end

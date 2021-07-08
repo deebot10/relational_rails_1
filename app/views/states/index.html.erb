@@ -2,7 +2,8 @@
 <% @states.order_created_at.each do |state| %>
 
 
-  <h2><%= state.name %></h2>
+  <h3><a href=<%="/states/#{state.id}"%>><%= "#{state.name}" %></a></h3>
+
   <ul>
     <li>Region of Country: <%= state.region %></li>
     <li><%= state.name %> has a military discount for camping: <%= state.military_discount %></li>
