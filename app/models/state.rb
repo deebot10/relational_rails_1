@@ -5,4 +5,8 @@ class State < ApplicationRecord
   def self.order_created_at
     order(created_at: :desc)
   end
+
+  def parks_count
+    parks.count
+  end
 end
