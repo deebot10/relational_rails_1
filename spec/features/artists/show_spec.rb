@@ -33,15 +33,28 @@ RSpec.describe 'Artist Show Page' do
   # User Story 8
   it 'has a link to the list of artists' do
     expect(page).to have_link('Artists')
+
     click_link 'Artists'
+
     expect(current_path).to eq('/artists')
   end
-  
+
   # User Story 9 
   it 'has a link to the list of albums' do
     expect(page).to have_link('Albums')
+
     click_link 'Albums'
+
     expect(current_path).to eq('/albums')
+  end
+  
+  # User Story 10
+  it 'has a link to hits view' do
+    expect(page).to have_link(@artist.name)
+
+    click_link "#{@artist.name}"
+
+    expect(current_path).to eq("/artists/#{@artist.id}/albums")
   end
   
 end
