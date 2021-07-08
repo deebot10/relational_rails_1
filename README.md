@@ -61,7 +61,7 @@ Learning goals and areas of focus consisted of:
 - Github: [Brian Fletcher](https://github.com/bfl3tch)
 - LinkedIn: [Brian Fletcher](https://www.linkedin.com/in/bfl3tch)
 
-👤  **Dee H**
+👤  **Dee Hill**
 - Github: [Dee Hill](https://github.com/deebot10)
 - LinkedIn: [Dee Hill](https://www.linkedin.com/in/dee-hill-82b18220b/)
 
