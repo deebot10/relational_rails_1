@@ -1,8 +1,21 @@
-<h1>Parks located in <%= @states.name %></h1>
-
+<table class="table table-success table-striped table-hover">
+  <h1>Parks located in <%= @states.name %></h1>
+  <thead> </thead>
 <% @parks.each do |park| %>
-<h2><%= park.name %></h2>
-<p>Camping allowed? <%= park.camping_allowed %></p>
-<p>Kayaking available? <%= park.kayaking_available %></p>
-<p>Overall park rating: <%= park.park_rating %></p>
+<tr><th><%= park.name %></th></tr>
+<% if park.camping_allowed == true %>
+<tr><td>Camping allowed</td></tr>
+<% elsif park.camping_allowed == false %>
+<tr><td>Camping not allowed</td></tr>
 <% end %>
+<% if park.kayaking_available == true %>
+<tr><td>Kayaking available</td></tr>
+<% elsif park.kayaking_available == false %>
+<tr><td>Kayaking not available</td></tr>
+<% end %>
+<tr><td>Overall park rating: <%= park.park_rating %></td></tr>
+
+<% end %>
+</table>
+
+<p><a class="btn btn-primary" href=<%="/states/#{@states.id}"%>>Back to State Overview</a>
