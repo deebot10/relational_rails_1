@@ -2,31 +2,33 @@
   <table class="table table-success table-striped table-hover">
     <thead></thead>
       <tr>
-        <th>This is the page for <%= "#{@state.name}" %>.</th>
+        <th style="text-align: center">This is the page for <%= "#{@state.name}" %>.</th>
       <tr>
 
-        <td>It is located in the <%= "#{@state.region}" %> region.</td>
+        <td style="text-align: center">It is located in the <%= "#{@state.region}" %> region.</td>
       </tr>
       <% if @state.military_discount == true %>
         <tr>
-          <td>It has a military discount for camping reservations!</td>
+          <td style="text-align: center">It has a military discount for xcamping reservations!</td>
         </tr>
       <% elsif @state.military_discount == false %>
         <tr>
-          <td>It does not have a military discount for camping reservations.</td>
+          <td style="text-align: center">It does not have a military discount for camping reservations.</td>
         </tr>
       <% end %>
         <tr>
-          <td>This state has an environmental ranking of: <%= @state.green_rank %></td>
+          <td style="text-align: center">This state has an environmental ranking of: <%= @state.green_rank %></td>
         <tr>
-          <td>Number of Parks in this State: <%= @state.parks_count %></td>
+          <td style="text-align: center">Number of Parks in this State: <%= @state.parks_count %></td>
         </tr>
 
 </table>
-</section>
-<tr><a class="btn btn-primary" href=<%="/states/#{@state.id}/parks"%>>State Parks in <%= "#{@state.name}" %></a></tr>
-<tr><a class="btn btn-primary" href=<%="/states/"%>>Back to States</a></tr>
 
+<div style="text-align:center"> <a style="align: center" class="btn btn-primary" href=<%="/states/#{@state.id}/parks"%>>State Parks in <%= "#{@state.name}" %></a></tr>
+<br/>
+<br/>
+<div style="text-align:center"> <a style="align: center" class="btn btn-primary" href=<%="/states/"%>>Back to States</a></tr>
+</section>
 
 <p>
 <p></p>

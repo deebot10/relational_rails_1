@@ -1,13 +1,28 @@
-<h1>States Index List</h1>
+<h1 style="text-align: center"><img src='https://www.gannett-cdn.com/media/2020/06/29/USATODAY/usatsports/gettyimages-610663444.jpg?crop=1365,768,x0,y0&width=1365&height=768&format=pjpg&auto=webp' alt="States" height=50% width=50% </h1><br/><br/>
 <% @states.order_created_at.each do |state| %>
+  
 
+  <div style="text-align:center"><a style="align: center" class="btn btn-secondary" href=<%="/states/#{state.id}"%>><%= "#{state.name}" %></a></h3>
+  </div>
+  <div style="text-align:center"><img src="https://i.pinimg.com/736x/5e/8f/37/5e8f3769652154c09064e81af4ea0f8a.jpg" height="2%" width="2%">
+  </div>
 
-  <h3><a href=<%="/states/#{state.id}"%>><%= "#{state.name}" %></a></h3>
-
-  <ul>
-    <li>Region of Country: <%= state.region %></li>
-    <li><%= state.name %> has a military discount for camping: <%= state.military_discount %></li>
-    <li><%= state.name %> has an environmental ranking of: <%= state.green_rank %></li>
-    <li>Number of Parks in this State: <%= state.parks_count %></li>
-  </ul>
+    <br/>
+  <table class="table table-success table-striped table-hover">
+    <thead></thead>
+    <tr>
+    <td style="text-align: center">Region of Country: <%= state.region %></td>
+    </tr>
+    <tr>
+    <td style="text-align: center"><%= state.name %> has a military discount for camping: <%= state.military_discount %></td>
+    </tr>
+    <tr>
+    <td style="text-align: center"><%= state.name %> has an environmental ranking of: <%= state.green_rank %></li>
+    </tr>
+    <tr>
+    <td style="text-align: center">Number of Parks in this State: <%= state.parks_count %></li>
+    </tr>
+    <tr>
+  </table>
+  <br/>
 <% end %>

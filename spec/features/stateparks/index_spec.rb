@@ -5,13 +5,16 @@ RSpec.describe 'StateParks' do
 
     it 'has the ability to read state content' do
       @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
-      @park_1 = @state_1.parks.create!(name: 'Ginny Springs', camping_allowed: true, kayaking_available: true, park_rating: 4.6)
-      @park_2 = @state_1.parks.create!(name: 'Collier-Seminole State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.4)
+      @park_1 = @state_1.parks.create!(name: 'Ginny Springs', camping_allowed: false, kayaking_available: true, park_rating: 4.6)
+      @park_2 = @state_1.parks.create!(name: 'Collier-Seminole State Park', camping_allowed: true, kayaking_available: false, park_rating: 4.4)
 
       visit "/states/#{@state_1.id}/parks"
 
       expect(page).to have_content(@park_1.name)
-      expect(page).to have_content("Kayaking available? #{@park_1.kayaking_available}")
+      expect(page).to have_content("Kayaking available")
+      expect(page).to have_content("Kayaking not available")
+      expect(page).to have_content("Camping not allowed")
+      expect(page).to have_content("Camping allowed")
     end
 
     it 'has the ability to read state content' do
