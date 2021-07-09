@@ -42,9 +42,9 @@ Rails.application.routes.draw do
   get 'albums/:id',          to: 'albums#show'
   #Hits (Artist_Albums)
   get '/artists/:id/albums', to: 'hits#index'
-
-
-
+  # Create an Artist
+  get '/artist/new',        to: 'artists#new'
+  post '/artists',           to: 'artists#create'
 
 
 
