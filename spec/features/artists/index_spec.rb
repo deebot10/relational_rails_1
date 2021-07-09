@@ -73,16 +73,16 @@ RSpec.describe 'Artist index page' do
 
     click_link 'Create Artist'
 
-    expect(current_path).to eq('/artists/new')
+    expect(current_path).to eq('/artist/new')
 
-    # fiil_in 'Name', with: 'Drake'
-    # fill_in 'Age', with: 34
-    # fill_in 'Genre', with: 'Rap'
-    # fill_in 'Currently Touring', with: true
+    fiil_in 'Name', with: 'Drake'
+    fill_in 'Age', with: 34
+    fill_in 'Genre', with: 'Rap'
+    fill_in 'Currently Touring', with: true
 
-    # click_link 'Submit'
+    click_link 'Create Artist'
 
-    # expect(page).to have_content('Drake')
+    expect(page).to have_content('Drake')
   end
   
 end
