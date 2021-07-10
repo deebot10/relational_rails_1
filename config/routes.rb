@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   #B
   #State routes
   get '/states', to: 'states#index'
+  get '/states/new', to: 'states#new'
   get '/states/:id', to: 'states#show'
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
   get '/states/:id/parks', to: 'stateparks#index'
+
 
 
 
