@@ -2,20 +2,23 @@
   <h1>Parks located in <%= @states.name %></h1>
   <thead> </thead>
 <% @parks.each do |park| %>
-<tr><th><%= park.name %></th></tr>
+
+<tr><th style="text-align: center"><a href=<%="/parks/#{park.id}"%> class="btn btn-primary"><%= park.name %></a></th></tr>
 <% if park.camping_allowed == true %>
-<tr><td>Camping allowed</td></tr>
+<tr><td style="text-align: center">Camping allowed</td></tr>
 <% elsif park.camping_allowed == false %>
-<tr><td>Camping not allowed</td></tr>
+<tr><td style="text-align: center">Camping not allowed</td></tr>
 <% end %>
 <% if park.kayaking_available == true %>
-<tr><td>Kayaking available</td></tr>
+<tr><td style="text-align: center">Kayaking available</td></tr>
 <% elsif park.kayaking_available == false %>
-<tr><td>Kayaking not available</td></tr>
+<tr><td style="text-align: center">Kayaking not available</td></tr>
 <% end %>
-<tr><td>Overall park rating: <%= park.park_rating %></td></tr>
+<tr><td style="text-align: center">Overall park rating: <%= park.park_rating %></td></tr>
+<tr><td style="text-align: center"></td></tr>
 
 <% end %>
 </table>
 
-<p><a class="btn btn-primary" href=<%="/states/#{@states.id}"%>>Back to State Overview</a>
+<div style="text-align:center"><a class="btn btn-secondary"  style="align: center" href=<%="/states/#{@states.id}"%>>Back to State Overview</a>
+</div>

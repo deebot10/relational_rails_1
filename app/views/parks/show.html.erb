@@ -1,25 +1,36 @@
-<h1>This is the page for <%= "#{@park.name}" %>.</h1>
-<h3>It is located in the great state of <%= "#{@park.state.name}" %>, which is in the <%= "#{@park.state.region}" %> region of the country.</h3>
+<div class="card">
+  <div class="card-body" align="center">
+    <h5 class="card-title">This is the page for <%= "#{@park.name}" %>.</h5>
+    <h6 class="card-text">Located in
+      <a href=<%="/states/#{@park.state_id}"%> class="btn btn-small btn-success"><%= @park.state.name%></a> --> the <%= "#{@park.state.region}" %> region of the country.
+      </h6>
+<p> </p>
 <% if @park.camping_allowed == true %>
-<h3>You can camp at this park!</h3>
+<p class="card-text">You can camp at this park!</p>
 <% elsif @park.camping_allowed == false %>
-<h3>You're not allowed to camp at this state park.</h3>
+<p class="card-text">You're not allowed to camp at this state park.</p>
 <% end %>
 
 <% if @park.kayaking_available == true %>
-<h3>You can kayak at this park!</h3>
+<p class="card-text">You can kayak at this park!</p>
 <% elsif @park.kayaking_available == false %>
-<h3>You aren't able to kayak at this park.</h3>
+<p class="card-text">You aren't able to kayak at this park.</p>
 <% end %>
 
 <% if @park.kayaking_available == false || @park.camping_allowed == false %>
-<h3>Regardless,</h3>
+<p class="card-text">Regardless,</p>
 <% end %>
 
 <% if @park.park_rating >= 4.6 %>
-<h3>It's well worth the visit, as it's rating is <%="#{@park.park_rating}"%> out of 5!</h3>
+<p class="card-text">It's well worth the visit, as it's rating is <%="#{@park.park_rating}"%> out of 5!</p>
 <% elsif @park.park_rating > 4.0 && @park.park_rating < 4.6 %>
-<h3>It's probably worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</h3>
+<p class="card-text">It's probably worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</p>
 <% elsif @park.park_rating < 4.0 %>
-<h3>It might be worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</h3>
+<p class="card-text">It might be worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</p>
+
 <% end %>
+
+<br/>
+
+<a href=<%="/parks/"%> class="btn btn-secondary">Back to Parks</a>
+</div>

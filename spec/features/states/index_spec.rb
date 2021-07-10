@@ -12,7 +12,7 @@ RSpec.describe 'State' do
     it 'has the ability to read state content' do
       expect(page).to have_content(@state_1.name)
       expect(page).to have_content(@state_2.region)
-      expect(page).to have_content(@state_3.military_discount)
+      expect(page).to have_content('military discount')
       expect(page).to have_content(@state_3.green_rank)
     end
 

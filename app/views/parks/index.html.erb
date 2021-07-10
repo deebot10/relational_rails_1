@@ -1,11 +1,34 @@
-<h1>Parks Index List</h1>
-
+<div align="center">
+  <img src="https://www.americasstateparks.org/wp-content/uploads/2020/01/vail-1732981_1920-1024x599.jpg">
+</div>
+<h1 align="center">All Parks</h1>
 <% @parks.each do |park| %>
 
-  <p><%= park.name %></p>
-  <p><%= park.camping_allowed %></p>
-  <p><%= park.kayaking_available %></p>
-  <p><%= park.park_rating %></p>
-  <p><%= park.state_id %></p>
-  <p><%= park.id %></p>
+<div class="card">
+  <div class="card-body" align="center">
+    <h5 class="card-title"><%= park.name %></h5>
+    <h6 class="card-text">Located in
+      <a href=<%="/states/#{park.state_id}"%> class="btn btn-small btn-success"><%= park.state.name%></a>
+    </h6>
+    <br/>
+
+    <% if park.camping_allowed == true %>
+      <p class="card-text">Camping is available!
+    <% elsif park.camping_allowed == false %>
+      <p class="card-text">Camping is not offered here.</p>
+    <% end %>
+
+    <% if park.kayaking_available == true %>
+      <p class="card-text">Kayaking is available at this park!
+    <% elsif park.kayaking_available == false %>
+      <p class="card-text">Kayaking is not an option at this park.</p>
+    <% end %>
+
+    <p class="card-text">This park is rated: <%= park.park_rating %> out of 5</p>
+
+    <a href=<%="/parks/#{park.id}"%> class="btn btn-primary">Head to <%= park.name %></a>
+    <br/>
+    <br/>
+  </div>
+</div>
 <% end %>

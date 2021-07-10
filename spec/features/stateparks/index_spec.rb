@@ -25,8 +25,10 @@ RSpec.describe 'StateParks' do
       visit "/states/#{@state_2.id}/parks"
 
       expect(page).to have_content(@park_3.name)
-      expect(page).to have_content("Kayaking available? #{@park_3.kayaking_available}")
-      expect(page).to have_content(@park_3.camping_allowed)
+      expect(page).to have_content("Kayaking available")
+      expect(page).to have_content("Kayaking not available")
+      expect(page).to have_content("Camping allowed")
+      expect(page).to have_content("Camping not allowed")
     end
 
     it 'has a link to the list of states' do
