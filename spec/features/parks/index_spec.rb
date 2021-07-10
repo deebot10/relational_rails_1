@@ -18,10 +18,12 @@ RSpec.describe 'Park' do
 
     it 'has the ability to read park content' do
       expect(page).to have_content(@park_1.name)
-      expect(page).to have_content(@park_1.camping_allowed)
-      expect(page).to have_content(@park_1.kayaking_available)
+      expect(page).to have_content("Camping is available!")
+      expect(page).to have_content("Camping is not offered here.")
+      expect(page).to have_content("Kayaking is available at this park!")
+      expect(page).to have_content("Kayaking is not an option at this park.")
       expect(page).to have_content(@park_1.park_rating)
-      expect(page).to have_content(@park_1.state_id)
+      expect(page).to have_content(@park_1.state.name)
 
     end
 
@@ -33,7 +35,7 @@ RSpec.describe 'Park' do
 
     it 'has a link to the list of parks' do
       expect(page).to have_link('Parks')
-      click_link 'Park'
+      click_link "Parks"
       expect(current_path).to eq('/parks')
     end
   end
