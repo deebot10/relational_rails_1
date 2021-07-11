@@ -11,8 +11,12 @@ class StatesController < ApplicationController
   end
 
   def create
-    state = State.create!(name: params['name'], region: params[:region], military_discount: params[:military_discount], green_rank: params[:green_rank])
+    state = State.create(state_params)
     redirect_to '/states'
+  end
+
+  def state_params
+    params.permit(:name, :region, :military_discount, :green_rank)
   end
 
 end
