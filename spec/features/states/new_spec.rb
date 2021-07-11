@@ -11,12 +11,15 @@ RSpec.describe 'State creation' do
   it 'can create a new state' do
     visit '/states/new'
 
-    fill_in('Name', with: 'Georgia')
-    fill_in('Camping Military Discount?', with: 'false')
-    fill_in('Environmental Rank', with: 35)
+    fill_in('name', with: 'Georgia')
+    check(:military_discount)
+    fill_in('region', with: 'Southeast')
+    fill_in('green_rank', with: '29')
     click_button('Create State')
+
     # new_state_id = State.last.id
-    expect(current_path).to eq('/states')
     expect(page).to have_content('Georgia')
+    expect(current_path).to eq('/states')
+
   end
 end

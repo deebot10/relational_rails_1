@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
   get '/states/:id/parks', to: 'stateparks#index'
+  post '/states', to: 'states#create'
 
 
 

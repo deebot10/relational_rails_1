@@ -1,0 +1,27 @@
+<%= form_with url: '/states', method: :post, local: true do |form| %>
+  <div class="form-control" align="center" style="background-color: #DEB887">
+  <div class="form-control" align="center" >
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  </div>
+  <br>
+  <div class="form-control" align="center" >
+  <%= form.label :region, "Region of Country" %>
+  <%= form.text_field :region %>
+  </div>
+  <br>
+  <div class="form-control" align="center" >
+  <%= check_box_tag(:military_discount) %>
+  <%= label_tag(:military_discount, "State has military discount for camping reservations") %>
+  </div>
+  <br>
+  <div class="form-control" align="center" >
+  <%= form.label :green_rank %>
+  <%= form.text_field :green_rank %>
+  </div>
+  <br/>
+  <div class="form-group" align="center" >
+  <%= form.submit "Create State" %>
+  </div>
+  </div>
+  <% end %>
