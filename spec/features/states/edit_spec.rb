@@ -20,7 +20,7 @@ RSpec.describe 'State edit' do
     fill_in 'Name', with: 'Florida'
     click_button "Update #{state_1.name}"
 
-    expect(current_path).to eq("/states")
+    expect(current_path).to eq("/states/#{state_1.id}")
     expect(page).to have_content('Florida')
   end
 

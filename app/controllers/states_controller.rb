@@ -8,6 +8,7 @@ class StatesController < ApplicationController
   end
 
   def new
+
   end
 
   def create
@@ -22,7 +23,7 @@ class StatesController < ApplicationController
   def update
     state = State.find(params[:id])
     state.update(state_params)
-    redirect_to "/states"
+    redirect_to "/states/#{state.id}"
   end
 
 private
