@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   post '/artists',           to: 'artists#create'
   # Edit an Artist
   get '/artists/:id/edit',   to: 'artists#edit' 
+  patch 'artists/:id',       to: 'artists#update'
   #Fetch Artist Routes
   get '/artists',            to: 'artists#index'
   get '/artists/:id',        to: 'artists#show'

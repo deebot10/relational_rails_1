@@ -77,9 +77,10 @@ RSpec.describe 'Artist Show Page' do
 
     fill_in 'Name', with: 'dee'
     fill_in 'Age', with: 25
-    fill_in 'Genre', with: 'Rap'
+    fill_in 'Genre', with: 'Country'
     fill_in 'Currently touring', with: 'true'
-
+    click_button 'Edit Artist'
+     
     expect(page).to have_content('dee')
     expect(page).to have_content(25)
   end
