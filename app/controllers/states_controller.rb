@@ -15,8 +15,19 @@ class StatesController < ApplicationController
     redirect_to '/states'
   end
 
+  def edit
+    @state = State.find(params[:id])
+  end
+
+  def update
+    state = State.find(params[:id])
+    state.update(state_params)
+    redirect_to "/states"
+  end
+
+private
+#only available inside the class theyre defined in
   def state_params
     params.permit(:name, :region, :military_discount, :green_rank)
   end
-
 end
