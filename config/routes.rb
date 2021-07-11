@@ -35,20 +35,20 @@ Rails.application.routes.draw do
 
   #D
   # Create an Artist
-  get '/artists/new',           to: 'artists#new'
-  post '/artists',              to: 'artists#create'
+  get '/artists/new',             to: 'artists#new'
+  post '/artists',                to: 'artists#create'
   # Edit an Artist
-  get '/artists/:id/edit',      to: 'artists#edit' 
-  patch 'artists/:id',          to: 'artists#update'
+  get '/artists/:id/edit',        to: 'artists#edit' 
+  patch 'artists/:id',            to: 'artists#update'
   #Fetch Artist Routes
-  get '/artists',               to: 'artists#index'
-  get '/artists/:id',           to: 'artists#show'
+  get '/artists',                 to: 'artists#index'
+  get '/artists/:id',             to: 'artists#show'
   #Album Routes
-  get '/albums',                to: 'albums#index'
-  get 'albums/:id',             to: 'albums#show'
+  get '/albums',                  to: 'albums#index'
+  get 'albums/:id',               to: 'albums#show'
   #Hits (Artist_Albums)
-  get '/artists/:id/albums',    to: 'hits#index'
+  get '/artists/:id/albums',      to: 'hits#index'
   #Create an Artist-Album
-  get '/artists/:id/albums/new', to: 'hits#new'
-  get 'artists/:id/albums',      to: 'hits#create'  
+  get '/artists/:id/albums/new',  to: 'hits#new'
+  post 'artists/:id/albums',      to: 'hits#create'  
 end
