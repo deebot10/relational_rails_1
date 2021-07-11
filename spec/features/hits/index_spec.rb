@@ -54,7 +54,7 @@ RSpec.describe 'Hits Index' do
     # and I am redirected to the Parent Childs Index page where I can see the new child listed
   it 'can Create a new album for a Artist' do
 
-    click_button 'Create Album'
+    click_button 'Add Album'
 
     expect(current_path).to eq("/artists/#{@artist.id}/albums/new")
 
