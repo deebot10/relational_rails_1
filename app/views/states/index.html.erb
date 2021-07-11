@@ -31,7 +31,10 @@
   <td style="text-align: center">Number of Parks in this State: <%= state.parks_count %></td>
   </tr>
   <tr>
-    <td style="text-align: center"><%= button_to "Edit #{state.name}", "/states/#{state.id}/edit", method: :get %>
+    <td style="text-align: center"><%= button_to "Edit #{state.name}", "/states/#{state.id}/edit", method: :get %></td>
+  <tr>
+    <td style="text-align: center"><%= button_to "Delete #{state.name}", "/states/#{state.id}", method: :delete %></td>
+
 </table>
 <br/>
 <% end %>

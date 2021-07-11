@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post '/states', to: 'states#create'
   get '/states/:id/edit', to: 'states#edit'
   patch '/states/:id/', to: 'states#update'
+  delete '/states/:id', to: 'states#destroy'
 
 
 

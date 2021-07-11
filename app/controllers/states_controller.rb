@@ -26,6 +26,12 @@ class StatesController < ApplicationController
     redirect_to "/states/#{state.id}"
   end
 
+  def destroy
+    state = State.find(params[:id])
+    state.destroy
+    redirect_to '/states'    
+  end
+
 private
 #only available inside the class theyre defined in
   def state_params
