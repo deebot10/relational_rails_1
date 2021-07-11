@@ -52,10 +52,8 @@ RSpec.describe 'Artist index page' do
     
     expect(current_path).to eq('/albums')
   end
-  
 
-
-    # User Story 11, Parent Creation 
+  # User Story 11, Parent Creation 
   it 'Can create new artists with attributes' do
 
     expect(page).to have_content('Create Artist')
@@ -75,5 +73,4 @@ RSpec.describe 'Artist index page' do
     
     expect(page).to have_content('Drake') 
   end
-  
 end

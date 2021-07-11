@@ -1,5 +1,7 @@
 <h1>Artist Show Page</h1>
 
+<h2><a href=<%="/artists/#{@artist.id}/edit"%>>Edit Artist</a></h2>
+
 <h2><a href=<%="/artists/#{@artist.id}/albums"%>><%= @artist.name%></a></h2>
 <li>Age:<%= @artist.age%></li>
 <li>Music Genre:<%= @artist.genre%></li>

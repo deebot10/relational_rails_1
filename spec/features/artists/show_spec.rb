@@ -55,6 +55,35 @@ RSpec.describe 'Artist Show Page' do
     click_link "#{@artist.name}"
 
     expect(current_path).to eq("/artists/#{@artist.id}/albums")
+  end 
+
+  # User Story 12
+
+    # As a visitor
+    # When I visit a parent show page
+    # Then I see a link to update the parent "Update Parent"
+    # When I click the link "Update Parent"
+    # Then I am taken to '/parents/:id/edit' where I  see a form to edit the parent's attributes:
+    # When I fill out the form with updated information
+    # And I click the button to submit the form
+    # Then a `PATCH` request is sent to '/parents/:id',
+    # the parent's info is updated,
+    # and I am redirected to the Parent's Show page where I see the parent's updated info
+  it 'can update and artist and the attributes' do
+  
+    expect(page).to have_content('Edit Artist')
+    
+    click_link 'Edit Artist' 
+
+    expect(current_path).to eq("/artists/#{@artist.id}/edit")
+
+    fill_in 'Name', with: 'dee'
+    fill_in 'Age', with: 25
+    fill_in 'Genre', with: 'Rap'
+    fill_in 'Currently touring', with: 'true'
+
+    expect(page).to have_content('dee')
+    expect(page).to have_content(25)
   end
   
 end
