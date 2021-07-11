@@ -34,7 +34,10 @@ Rails.application.routes.draw do
 
 
   #D
-  #Artist Routes
+  # Create an Artist
+  get '/artists/new',        to: 'artists#new'
+  post '/artists',           to: 'artists#create'
+  #Fetch Artist Routes
   get '/artists',            to: 'artists#index'
   get '/artists/:id',        to: 'artists#show'
   #Album Routes
@@ -42,9 +45,6 @@ Rails.application.routes.draw do
   get 'albums/:id',          to: 'albums#show'
   #Hits (Artist_Albums)
   get '/artists/:id/albums', to: 'hits#index'
-  # Create an Artist
-  get '/artist/new',        to: 'artists#new'
-  post '/artist',           to: 'artists#create'
 
 
 
