@@ -1,9 +1,9 @@
 <h1>Artist Show Page</h1>
 
-<h2><a href=<%="/artists/#{@artist.id}/edit"%>>Edit Artist</a></h2>
-
 <h2><a href=<%="/artists/#{@artist.id}/albums"%>><%= @artist.name%></a></h2>
 <li>Age:<%= @artist.age%></li>
 <li>Music Genre:<%= @artist.genre%></li>
 <li>Currently Touring:<%= @artist.currently_touring%></li>
 <li>Number of Albums: <%= @artist.album_count%></li>
+
+<p><%= button_to 'Edit Artist', "/artists/#{@artist.id}/edit", method: :get %></p>

@@ -70,10 +70,8 @@ RSpec.describe 'Artist Show Page' do
     # the parent's info is updated,
     # and I am redirected to the Parent's Show page where I see the parent's updated info
   it 'can update and artist and the attributes' do
-  
-    expect(page).to have_content('Edit Artist')
-    
-    click_link 'Edit Artist' 
+      
+    click_button 'Edit Artist' 
 
     expect(current_path).to eq("/artists/#{@artist.id}/edit")
 
