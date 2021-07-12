@@ -5,3 +5,4 @@
 <p>Nominated:<%= @album.nominated%></p>
 
 <p><%= button_to 'Edit Album', "/albums/#{@album.id}/edit", method: :get %></p>
+<p><%= button_to 'Delete Album', "/albums/#{@album.id}", method: :delete %></p>

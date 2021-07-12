@@ -45,15 +45,7 @@ RSpec.describe 'Album Show' do
     expect(page).to have_content('3.15.20')
   end
   
-  #   User Story 20, Child Delete (x2)
-
-  # As a visitor
-  # When I visit a child show page
-  # Then I see a link to delete the child "Delete Child"
-  # When I click the link
-  # Then a 'DELETE' request is sent to '/child_table_name/:id',
-  # the child is deleted,
-  # and I am redirected to the child index page where I no longer see this child
+  # User Story 20
   it 'can delete an album' do
   
     click_button 'Delete Album'
