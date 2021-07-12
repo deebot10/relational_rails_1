@@ -6,19 +6,19 @@
       </h6>
 <p> </p>
 <% if @park.camping_allowed == true %>
-<p class="card-text">You can camp at this park!</p>
+  <p class="card-text">You can camp at this park!</p>
 <% elsif @park.camping_allowed == false %>
-<p class="card-text">You're not allowed to camp at this state park.</p>
+  <p class="card-text">You're not allowed to camp at this state park.</p>
 <% end %>
 
 <% if @park.kayaking_available == true %>
-<p class="card-text">You can kayak at this park!</p>
+  <p class="card-text">You can kayak at this park!</p>
 <% elsif @park.kayaking_available == false %>
-<p class="card-text">You aren't able to kayak at this park.</p>
+  <p class="card-text">You aren't able to kayak at this park.</p>
 <% end %>
 
 <% if @park.kayaking_available == false || @park.camping_allowed == false %>
-<p class="card-text">Regardless,</p>
+  <p class="card-text">Regardless,</p>
 <% end %>
 
 <% if @park.park_rating >= 4.6 %>
@@ -29,6 +29,12 @@
 <p class="card-text">It might be worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</p>
 
 <% end %>
+<br/>
+
+<a href=<%="/parks/#{@park.id}/edit"%> class="btn btn-secondary">Update <%="#{@park.name}"%></a>
+<br/>is there a difference here?<br/>
+<%= button_to "Update #{@park.name}", "/parks/#{@park.id}/edit", method: :get, local: true %>
+
 
 <br/>
 

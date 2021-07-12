@@ -7,8 +7,18 @@ class ParksController < ApplicationController
     @park = Park.find(params[:id])
   end
 
+  def edit
+    @park = Park.find(params[:id])
+  end
+
+  def update
+    @park = Park.find(params[:id])
+    @park.update(park_params)
+    redirect_to "/parks/#{@park.id}"
+  end
+
   #only available inside the class theyre defined in
     def park_params
-      params.permit(:name, :region, :military_discount, :green_rank, :state_id)
+      params.permit(:name, :kayaking_available, :park_rating, :camping_allowed, :state_id)
     end
 end

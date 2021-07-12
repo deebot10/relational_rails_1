@@ -1,33 +1,33 @@
 <table class="table table-success table-striped table-hover">
-  <h1>Parks located in <%= @states.name %></h1>
+  <h1 align="center">Parks located in <%= @states.name %></h1>
   <thead> </thead>
   <div style="text-align:center">
     <%= button_to "New Park in #{@states.name}", "/states/#{@states.id}/parks/new", method: :get, local: true %>
-
+    <br/is there a difference here?<br/>
     <a class="btn btn-success"  style="align: center" href=<%="/states/#{@states.id}/parks/new"%>><%="New Park in #{@states.name}"%></a>
     <br/>
     <br/>
     <br/>
   </div>
 <% @parks.each do |park| %>
-
-<tr><th style="text-align: center"><a href=<%="/parks/#{park.id}"%> class="btn btn-primary"><%= park.name %></a></th></tr>
+  <tr><th style="text-align: center"><a href=<%="/parks/#{park.id}"%> class="btn btn-primary"><%= park.name %></a></th></tr>
 <% if park.camping_allowed == true %>
-<tr><td style="text-align: center">Camping allowed</td></tr>
+  <tr><td style="text-align: center">Camping allowed</td></tr>
 <% elsif park.camping_allowed == false %>
-<tr><td style="text-align: center">Camping not allowed</td></tr>
+  <tr><td style="text-align: center">Camping not allowed</td></tr>
 <% end %>
+
 <% if park.kayaking_available == true %>
-<tr><td style="text-align: center">Kayaking available</td></tr>
+  <tr><td style="text-align: center">Kayaking available</td></tr>
 <% else %>
-<tr><td style="text-align: center">Kayaking not available</td></tr>
+  <tr><td style="text-align: center">Kayaking not available</td></tr>
 <% end %>
-<tr><td style="text-align: center">Overall park rating: <%= park.park_rating %></td></tr>
-<tr><td style="text-align: center"></td></tr>
+  <tr><td style="text-align: center">Overall park rating: <%= park.park_rating %></td></tr>
+  <tr><td style="text-align: center"></td></tr>
 
 <% end %>
 </table>
 
-<div style="text-align:center"><a class="btn btn-secondary"  style="align: center" href=<%="/states/#{@states.id}"%>>Back to State Overview</a>
-
+<div style="text-align:center">
+  <a class="btn btn-secondary"  style="align: center" href=<%="/states/#{@states.id}"%>>Back to State Overview</a>
 </div>

@@ -13,10 +13,14 @@ Rails.application.routes.draw do
   #parks routes
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
+  get '/parks/:id/edit', to: 'parks#edit'
+  patch '/parks/:id/', to: 'parks#update'
+
   #stateparks routes
   get '/states/:state_id/parks', to: 'stateparks#index', as: 'new_state_park'
   get '/states/:state_id/parks/new', to: 'stateparks#new'
   post '/states/:state_id/parks', to: 'stateparks#create'
+  # post '/parks', to: 'stateparks#create'
 
 
 
