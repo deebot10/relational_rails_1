@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController 
   def index
-    @albums = Album.all    
+    @albums = Album.all.nominated_albums    
   end    
 
   def show
