@@ -46,15 +46,11 @@ RSpec.describe 'State' do
 
     it 'has a link to delete the states' do
       expect(page).to have_button('Delete Florida')
-      expect(page).to have_button('Delete Maine')
-      expect(page).to have_button('Delete Washington')
       expect(page).to_not have_link('Delete Iowa')
     end
 
     it 'actually deletes the state' do
       expect(page).to have_button('Delete Florida')
-      expect(page).to have_button('Delete Maine')
-      expect(page).to have_button('Delete Washington')
       click_button('Delete Florida')
       expect(page).to_not have_content('Florida')
     end

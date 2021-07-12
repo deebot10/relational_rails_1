@@ -18,6 +18,9 @@ RSpec.describe 'State edit' do
 
     visit "/states/#{state_1.id}/edit"
     fill_in 'Name', with: 'Florida'
+    fill_in 'Region of Country', with: 'Southeast'
+    check(:military_discount)
+    fill_in 'Green rank', with: '29'
     click_button "Update #{state_1.name}"
 
     expect(current_path).to eq("/states/#{state_1.id}")

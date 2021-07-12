@@ -32,7 +32,7 @@
   <div style="text-align:center"> <a style="align: center" class="btn btn-success" href=<%="/states/#{@state.id}/edit"%>>Edit <%= "#{@state.name}" %></a></tr>
   <br/>
   <br/>
-  <%= button_to "Delete #{@state.name}", "/states/#{@state.id}", method: :delete %>
+  <%= button_to "Delete #{@state.name}", "/states/#{@state.id}", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." } %>
   <br/>
   <div style="text-align:center">
     <a style="align: center" class="btn btn-secondary" href=<%="/states/"%>>Back to States</a>

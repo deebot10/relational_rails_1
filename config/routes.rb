@@ -8,13 +8,14 @@ Rails.application.routes.draw do
   get '/states/:id', to: 'states#show'
   post '/states', to: 'states#create'
   get '/states/:id/edit', to: 'states#edit'
-  patch '/states/:id/', to: 'states#update'
+  patch '/states/:id', to: 'states#update'
   delete '/states/:id', to: 'states#destroy'
   #parks routes
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
   get '/parks/:id/edit', to: 'parks#edit'
-  patch '/parks/:id/', to: 'parks#update'
+  patch '/parks/:id', to: 'parks#update'
+  delete '/parks/:id', to: 'parks#destroy'
 
   #stateparks routes
   get '/states/:state_id/parks', to: 'stateparks#index', as: 'new_state_park'

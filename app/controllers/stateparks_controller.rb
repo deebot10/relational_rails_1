@@ -16,7 +16,7 @@ class StateparksController < ApplicationController
 
 private
   def state_park_params
-    params.permit(:name, :camping_allowed, :kayaking_available, :park_rating)
+    params.permit(:id, :state_id, :name, :camping_allowed, :kayaking_available, :park_rating)
   end
 
 end

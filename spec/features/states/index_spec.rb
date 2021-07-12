@@ -52,6 +52,11 @@ RSpec.describe 'State' do
       expect(page).to_not have_link('Delete Iowa')
     end
 
-
+      it 'can delete the artist from the index page' do
+        visit '/states'
+        click_button "Delete #{@state_1.name}"
+        expect(current_path).to eq('/states')
+        expect(page).to_not have_content('Florida')
+      end
   end
 end
