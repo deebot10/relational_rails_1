@@ -15,7 +15,9 @@ RSpec.describe 'Park' do
 
     it 'has a link to update the child' do
       expect(page).to have_content("Update #{@park_1.name}")
+
       click_button("Update #{@park_1.name}")
+
       expect(current_path).to eq("/parks/#{@park_1.id}/edit")
     end
 
@@ -26,9 +28,10 @@ RSpec.describe 'Park' do
 
     it 'actually deletes the state' do
       expect(page).to have_button('Delete Ginny Springs')
+
       click_button('Delete Ginny Springs')
+
       expect(page).to_not have_content('Ginny Springs')
     end
-
   end
 end

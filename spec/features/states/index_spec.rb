@@ -18,6 +18,7 @@ RSpec.describe 'State' do
 
     it 'orders the states by the most recently created' do
       expect(page).to have_content(@state_1.name)
+
       this = 'Washington'
       that = 'Maine'
       the_other = 'Florida'
@@ -28,13 +29,17 @@ RSpec.describe 'State' do
 
     it 'has a link to the list of states' do
       expect(page).to have_link('States')
+
       click_link 'States'
+
       expect(current_path).to eq('/states')
     end
 
     it 'has a link to the list of parks' do
       expect(page).to have_link('Parks')
+
       click_link 'Park'
+
       expect(current_path).to eq('/parks')
     end
 
@@ -52,11 +57,13 @@ RSpec.describe 'State' do
       expect(page).to_not have_link('Delete Iowa')
     end
 
-      it 'can delete the artist from the index page' do
-        visit '/states'
-        click_button "Delete #{@state_1.name}"
-        expect(current_path).to eq('/states')
-        expect(page).to_not have_content('Florida')
-      end
+    it 'can delete the artist from the index page' do
+      visit '/states'
+
+      click_button "Delete #{@state_1.name}"
+
+      expect(current_path).to eq('/states')
+      expect(page).to_not have_content('Florida')
+    end
   end
 end

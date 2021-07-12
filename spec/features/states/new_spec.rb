@@ -20,6 +20,5 @@ RSpec.describe 'State creation' do
     # new_state_id = State.last.id
     expect(page).to have_content('Georgia')
     expect(current_path).to eq('/states')
-
   end
 end

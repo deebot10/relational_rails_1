@@ -7,7 +7,7 @@
 <div class="card">
   <div class="card-body" align="center">
     <h5 class="card-title"><%= park.name %></h5>
-    <h6 class="card-text">Located in
+    <h6 class="card-text">Located in<br/>
       <a href=<%="/states/#{park.state_id}"%> class="btn btn-small btn-success"><%= park.state.name%></a>
     </h6>
     <br/>
@@ -29,6 +29,8 @@
     <a href=<%="/parks/#{park.id}"%> class="btn btn-primary">Head to <%= park.name %></a>
     <br/><br/>
     <%= button_to "Update #{park.name}", "/parks/#{park.id}/edit", method: :get, local: true %>
+    <br/>
+    <%= button_to "Delete #{park.name}", "/parks/#{park.id}", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
 
     <br/>
     <br/>
