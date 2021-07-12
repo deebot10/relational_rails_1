@@ -11,7 +11,7 @@ RSpec.describe 'Park' do
       @park_1 = Park.create!(state_id: @state_1.id, name: 'Ginny Springs', camping_allowed: true, kayaking_available: true, park_rating: 4.6)
       #either way of the two above works
       @park_2 = Park.create!(state_id: @state_2.id, name: 'Sebago Lake State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.7)
-      @park_3 = Park.create!(state_id: @state_1.id, name: 'Collier-Seminole State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.4)
+      @park_3 = Park.create!(state_id: @state_1.id, name: 'Collier-Seminole State Park', camping_allowed: true, kayaking_available: false, park_rating: 4.4)
       @park_4 = Park.create!(state_id: @state_2.id, name: "Wolfe's Neck Woods State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.5)
       visit '/parks'
     end
@@ -19,7 +19,6 @@ RSpec.describe 'Park' do
     it 'has the ability to read park content' do
       expect(page).to have_content(@park_1.name)
       expect(page).to have_content("Camping is available!")
-      expect(page).to have_content("Camping is not offered here.")
       expect(page).to have_content("Kayaking is available at this park!")
       expect(page).to have_content("Kayaking is not an option at this park.")
       expect(page).to have_content(@park_1.park_rating)
