@@ -58,5 +58,5 @@ Album.destroy_all
 @park_10 = @state_5.parks.create!(name: "Clarkco State Park", camping_allowed: true, kayaking_available: true, park_rating: 4.6)
 
 @state_6 = State.create!(name: 'Vermont', region: 'Northeast', military_discount: false, green_rank: 1)
-@park_9 = @state_5.parks.create!(name: 'Grand Isle State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.8)
-@park_10 = @state_5.parks.create!(name: "Underhill State Park", camping_allowed: true, kayaking_available: false, park_rating: 4.9)
+@park_9 = @state_6.parks.create!(name: 'Grand Isle State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.8)
+@park_10 = @state_6.parks.create!(name: "Underhill State Park", camping_allowed: true, kayaking_available: false, park_rating: 4.9)
