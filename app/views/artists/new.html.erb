@@ -1,0 +1,17 @@
+<h1>Create an Artist</h1>
+
+<%= form_with url: "/artists", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :age %>
+  <%= form.text_field :age %>
+
+  <%= form.label :genre %>
+  <%= form.text_field :genre %>
+
+  <%= form.label :currently_touring %>
+  <%= form.text_field :currently_touring %>
+
+  <%= form.submit 'Create Artist' %>
+<% end %>

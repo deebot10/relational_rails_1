@@ -39,4 +39,22 @@ RSpec.describe 'Hits Index' do
     click_link 'Artists'
     expect(current_path).to eq('/artists')
   end
+
+  # User Story 13
+  it 'can Create a new album for a Artist' do
+
+    click_button 'Add Album'
+
+    expect(current_path).to eq("/artists/#{@artist.id}/albums/new")
+
+    fill_in 'Name', with: '3.15.20'
+    fill_in 'Number of songs', with: 12 
+    fill_in 'Nominated', with: 'false'
+
+    click_button 'Add Album'
+
+    expect(current_path).to eq("/artists/#{@artist.id}/albums")
+
+    expect(page).to have_content('3.15.20')
+  end
 end
