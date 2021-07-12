@@ -15,7 +15,7 @@ RSpec.describe 'State creation' do
     check(:military_discount)
     fill_in('region', with: 'Southeast')
     fill_in('green_rank', with: '29')
-    click_button('Create State')
+    click_button("Create State")
 
     # new_state_id = State.last.id
     expect(page).to have_content('Georgia')

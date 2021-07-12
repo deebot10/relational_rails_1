@@ -8,11 +8,11 @@ class StatesController < ApplicationController
   end
 
   def new
-
+    @state = State.create!(state_params)
   end
 
   def create
-    state = State.create(state_params)
+    state = State.create!(state_params)
     redirect_to '/states'
   end
 
@@ -29,7 +29,7 @@ class StatesController < ApplicationController
   def destroy
     state = State.find(params[:id])
     state.destroy
-    redirect_to '/states'    
+    redirect_to '/states'
   end
 
 private
