@@ -28,15 +28,6 @@ RSpec.describe 'Album Show' do
   end
 
   # User Story 14
-    # As a visitor
-    # When I visit a Child Show page
-    # Then I see a link to update that Child "Update Child"
-    # When I click the link
-    # I am taken to '/child_table_name/:id/edit' where I see a form to edit the child's attributes:
-    # When I click the button to submit the form "Update Child"
-    # Then a `PATCH` request is sent to '/child_table_name/:id',
-    # the child's data is updated,
-    # and I am redirected to the Child Show page where I see the Child's updated information
   it 'Can update an Album' do
 
     click_button 'Edit Album'
@@ -52,5 +43,23 @@ RSpec.describe 'Album Show' do
     expect(current_path).to eq("/albums/#{@album_1.id}")
 
     expect(page).to have_content('3.15.20')
+  end
+  
+  #   User Story 20, Child Delete (x2)
+
+  # As a visitor
+  # When I visit a child show page
+  # Then I see a link to delete the child "Delete Child"
+  # When I click the link
+  # Then a 'DELETE' request is sent to '/child_table_name/:id',
+  # the child is deleted,
+  # and I am redirected to the child index page where I no longer see this child
+  it 'can delete an album' do
+  
+    click_button 'Delete Album'
+    
+    expect(current_path).to eq('/albums')
+
+    expect(page).to_not have_content('Awaken My Love')
   end
 end
