@@ -55,6 +55,32 @@ RSpec.describe 'Artist Show Page' do
     click_link "#{@artist.name}"
 
     expect(current_path).to eq("/artists/#{@artist.id}/albums")
+  end 
+
+  # User Story 12
+  it 'can update and artist and the attributes' do
+      
+    click_button 'Edit Artist' 
+
+    expect(current_path).to eq("/artists/#{@artist.id}/edit")
+
+    fill_in 'Name', with: 'dee'
+    fill_in 'Age', with: 25
+    fill_in 'Genre', with: 'Country'
+    fill_in 'Currently touring', with: 'true'
+    click_button 'Edit Artist'
+     
+    expect(page).to have_content('dee')
+    expect(page).to have_content(25)
   end
   
+  #User Story 19
+  it 'can delete an artsit' do
+    
+    click_button 'Delete Artist'
+
+    expect(current_path).to eq('/artists')
+
+    expect(page).to_not have_content('Childish Gambino')
+  end
 end

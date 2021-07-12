@@ -52,5 +52,25 @@ RSpec.describe 'Artist index page' do
     
     expect(current_path).to eq('/albums')
   end
-  
+
+  # User Story 11, Parent Creation 
+  it 'Can create new artists with attributes' do
+
+    expect(page).to have_content('Create Artist')
+
+    click_link 'Create Artist'
+
+    expect(current_path).to eq('/artists/new')
+
+    fill_in 'Name', with: 'Drake'
+    fill_in 'Age', with: 34
+    fill_in 'Genre', with: 'Rap'
+    fill_in 'Currently touring', with: 'true'
+
+    click_button 'Create Artist'
+
+    expect(current_path).to eq('/artists')
+    
+    expect(page).to have_content('Drake') 
+  end
 end
