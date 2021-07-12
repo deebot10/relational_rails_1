@@ -15,7 +15,7 @@ RSpec.describe 'Album Index Page' do
 
     @artist_3 = Artist.create!(name: 'Earl Sweatshirt', age: 27, genre: 'Rap', currently_touring: true)
 
-    @album_6 = @artist_3.albums.create!(name: 'Some Rap Songs', number_of_songs: 15, nominated: true)
+    @album_6 = @artist_3.albums.create!(name: 'Some Rap Songs', number_of_songs: 15, nominated: false)
 
     visit '/albums'
   end
@@ -43,20 +43,26 @@ RSpec.describe 'Album Index Page' do
     expect(page).to have_content(@album_5.number_of_songs)
     expect(page).to have_content(@album_5.nominated)
 
-    expect(page).to have_content(@album_6.name)
-    expect(page).to have_content(@album_6.number_of_songs)
-    expect(page).to have_content(@album_6.nominated)
   end
 
+  #User Story 9
   it 'has a link to the list of albums' do
     expect(page).to have_link('Albums')
     click_link 'Albums'
     expect(current_path).to eq('/albums')
   end
-
+  
+  #User Story 10
   it 'has a link to the list of artists' do
     expect(page).to have_link('Artists')
     click_link 'Artists'
     expect(current_path).to eq('/artists')
+  end
+  
+  #User Story 15  
+  it 'displays nominated albums only' do
+
+    expect(page).to_not have_content(@album_6.name)
+
   end
 end
