@@ -74,20 +74,12 @@ RSpec.describe 'Artist Show Page' do
     expect(page).to have_content(25)
   end
   
-    #   User Story 19, Parent Delete (x2)
-
-    # As a visitor
-    # When I visit a parent show page
-    # Then I see a link to delete the parent
-    # When I click the link "Delete Parent"
-    # Then a 'DELETE' request is sent to '/parents/:id',
-    # the parent is deleted, and all child records are deleted
-    # and I am redirected to the parent index page where I no longer see this parent
+  #User Story 19
   it 'can delete an artsit' do
     
     click_button 'Delete Artist'
 
-    expect(current_path).to eq('/aritsts')
+    expect(current_path).to eq('/artists')
 
     expect(page).to_not have_content('Childish Gambino')
   end
