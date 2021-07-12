@@ -1,6 +1,6 @@
 <h1>Edit Album</h1>
 
-<%= form_with url: "/albums/#{@album.id}/albums", method: :patch, local: true do |form| %>
+<%= form_with url: "/albums/#{@album.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
 

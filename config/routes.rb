@@ -53,5 +53,5 @@ Rails.application.routes.draw do
   post 'artists/:id/albums',      to: 'hits#create'
   #Edit an Album 
   get '/albums/:id/edit',         to: 'albums#edit'
-  patch '/abums/:id',             to: 'albums#update' 
+  patch '/albums/:id',            to: 'albums#update' 
 end

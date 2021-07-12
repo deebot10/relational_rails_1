@@ -49,7 +49,7 @@ RSpec.describe 'Album Show' do
 
     click_button 'Edit Album'
     
-    expect(current_path).to eq("/albums/#{album_1.id}")
+    expect(current_path).to eq("/albums/#{@album_1.id}")
 
     expect(page).to have_content('3.15.20')
   end
