@@ -6,4 +6,12 @@ class AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])  
   end
+
+  def edit
+      
+  end
+
+  def update
+    
+  end
 end

@@ -1,0 +1,14 @@
+<h1>Edit Album</h1>
+
+<%= form_with url: "/albums/#{@album.id}/albums", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :number_of_songs %>
+  <%= form.text_field :number_of_songs %>
+
+  <%= form.label :nominated %>
+  <%= form.text_field :nominated %>
+
+  <%= form.submit 'Edit Album' %>
+<% end %>
