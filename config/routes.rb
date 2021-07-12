@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   # Edit an Artist
   get '/artists/:id/edit',        to: 'artists#edit' 
   patch 'artists/:id',            to: 'artists#update'
+  #Delete an Artist 
+  delete '/artists/:id',          to: 'artists#destroy'
   #Fetch Artist Routes
   get '/artists',                 to: 'artists#index'
   get '/artists/:id',             to: 'artists#show'
@@ -53,5 +55,5 @@ Rails.application.routes.draw do
   post 'artists/:id/albums',      to: 'hits#create'
   #Edit an Album 
   get '/albums/:id/edit',         to: 'albums#edit'
-  patch '/albums/:id',            to: 'albums#update' 
+  patch '/albums/:id',            to: 'albums#update'
 end

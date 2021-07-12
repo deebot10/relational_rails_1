@@ -7,3 +7,4 @@
 <li>Number of Albums: <%= @artist.album_count%></li>
 
 <p><%= button_to 'Edit Artist', "/artists/#{@artist.id}/edit", method: :get %></p>
+<p><%= button_to 'Delete Artist', "/artists/#{@artist.id}", method: :delete %></p>
