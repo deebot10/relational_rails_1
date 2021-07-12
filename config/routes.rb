@@ -56,4 +56,6 @@ Rails.application.routes.draw do
   #Edit an Album 
   get '/albums/:id/edit',         to: 'albums#edit'
   patch '/albums/:id',            to: 'albums#update'
+  #Delete an Album
+  delete 'albums/:id',            to: 'albums#destroy'
 end
