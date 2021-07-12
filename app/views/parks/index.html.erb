@@ -27,6 +27,9 @@
     <p class="card-text">This park is rated: <%= park.park_rating %> out of 5</p>
 
     <a href=<%="/parks/#{park.id}"%> class="btn btn-primary">Head to <%= park.name %></a>
+    <br/><br/>
+    <%= button_to "Update #{park.name}", "/parks/#{park.id}/edit", method: :get, local: true %>
+
     <br/>
     <br/>
   </div>

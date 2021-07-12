@@ -38,5 +38,12 @@ RSpec.describe 'Park' do
       click_link "Parks"
       expect(current_path).to eq('/parks')
     end
+
+    it 'has a link to update the child' do
+      expect(page).to have_button("Update #{@park_1.name}")
+      click_button("Update #{@park_1.name}")
+      expect(current_path).to eq("/parks/#{@park_1.id}/edit")
+    end
+
   end
 end
