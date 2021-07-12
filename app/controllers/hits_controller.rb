@@ -1,7 +1,13 @@
 class HitsController < ApplicationController
   def index
-    @artists = Artist.find(params[:id])  
-    @albums = @artists.albums 
+    if params[:sort]
+      @artists = Artist.find(params[:id])   
+      @albums = @artists.albums.alphabatize 
+      require 'pry'; binding.pry
+    else 
+      @artists = Artist.find(params[:id])   
+      @albums = @artists.albums
+    end
   end    
 
   def new

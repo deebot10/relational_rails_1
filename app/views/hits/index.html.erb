@@ -1,6 +1,7 @@
 <h1>Artist Albums</h1>
 
 <h2><%= @artists.name%></h2>
+<p><%= button_to 'Sort by Title', "/artists/#{@artists.id}/albums/?=sort", method: :get %></p>
 
 <% @albums.each do |album|%>
   <p>Album Name:<%= album.name%></p>

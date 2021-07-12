@@ -63,6 +63,5 @@ RSpec.describe 'Album Index Page' do
   it 'displays nominated albums only' do
 
     expect(page).to_not have_content(@album_6.name)
-
   end
 end

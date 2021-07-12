@@ -20,7 +20,6 @@ RSpec.describe 'Artist index page' do
 
   #User Story 6
   it 'Artist show created_at for each record' do
-    expect(@artist_4.name).to appear_before(@artist_3.name)
 
     expect(page).to have_content(@artist_1.created_at)
     expect(page).to have_content(@artist_2.created_at)
