@@ -50,5 +50,8 @@ Rails.application.routes.draw do
   get '/artists/:id/albums',      to: 'hits#index'
   #Create an Artist-Album
   get '/artists/:id/albums/new',  to: 'hits#new'
-  post 'artists/:id/albums',      to: 'hits#create'  
+  post 'artists/:id/albums',      to: 'hits#create'
+  #Edit an Album 
+  get '/albums/:id/edit',         to: 'albums#edit'
+  patch '/abums/:id',             to: 'albums#update' 
 end
