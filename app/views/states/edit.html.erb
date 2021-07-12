@@ -23,5 +23,9 @@
   <div class="form-group" align="center" >
     <%= form.submit "Update #{@state.name}" %>
   </div>
+  <br/>
+  <div class="form-group" align="center" >
+    <%= button_to "Delete #{@state.name}", "/states/#{@state.id}", method: :delete %>
+  </div>
 </div>
 <% end %>
