@@ -61,8 +61,8 @@ RSpec.describe 'Hits Index' do
   #User Story 16 
   it 'can alphabatize the index of songs' do
 
-    click_button 'Sort by Title'
-
+    click_link 'Sort by Title'
+    
     expect(@album_2.name).to appear_before(@album_1.name) 
     expect(@album_1.name).to appear_before(@album_3.name) 
     expect(@album_3.name).to_not appear_before(@album_2.name) 
