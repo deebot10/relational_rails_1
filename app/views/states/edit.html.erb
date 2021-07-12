@@ -1,0 +1,32 @@
+<%= form_with url: "/states/#{@state.id}/", method: :patch, local: true do |form| %>
+<div class="form-control" align="center" style="background-color: #DEB887">
+  <div class="form-control" align="center" >
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+  <div class="form-control" align="center" >
+    <%= form.text_field :region %>
+    <%= form.label :region, "Region of Country" %>
+  </div>
+  <br>
+  <div class="form-control" align="center" >
+    <%= check_box_tag :military_discount %>
+    <%= label_tag(:military_discount, "State has military discount for camping reservations") %>
+  </div>
+  <br>
+  <div class="form-control" align="center" >
+    <%= form.text_field :green_rank %>
+    <%= form.label :green_rank %>
+  </div>
+  <br>
+  <div class="form-group" align="center" >
+    <%= form.submit "Update #{@state.name}" %>
+  </div>
+  <br/>
+  <div class="form-group" align="center" >
+  </div>
+</div>
+<% end %>
+<h1 style="text-align: center"><iframe src="https://cdn.wallethub.com/wallethub/embed/11987/ecofriendly-geochart.html" width="556" height="347" frameBorder="0" scrolling="no"></iframe>
+  <div style="width:556px;font-size:12px;color:#888;">State Environmental Rankings</div>

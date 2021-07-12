@@ -29,14 +29,39 @@ RSpec.describe 'Park' do
 
     it 'has a link to the list of states' do
       expect(page).to have_link('States')
+
       click_link 'States'
+
       expect(current_path).to eq('/states')
     end
 
     it 'has a link to the list of parks' do
       expect(page).to have_link('Parks')
+
       click_link "Parks"
+
       expect(current_path).to eq('/parks')
+    end
+
+    it 'has a link to update the child' do
+      expect(page).to have_button("Update #{@park_1.name}")
+
+      click_button("Update #{@park_1.name}")
+
+      expect(current_path).to eq("/parks/#{@park_1.id}/edit")
+    end
+
+    it 'has a link to delete the states' do
+      expect(page).to have_button('Delete Ginny Springs')
+      expect(page).to_not have_link('Delete Makena')
+    end
+
+    it 'actually deletes the state' do
+      expect(page).to have_button('Delete Ginny Springs')
+
+      click_button('Delete Ginny Springs')
+
+      expect(page).to_not have_content('Ginny Springs')
     end
   end
 end

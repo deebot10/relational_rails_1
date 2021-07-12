@@ -24,14 +24,18 @@ RSpec.describe 'State' do
 
     it 'has a link to the list of states' do
       expect(page).to have_link('States')
+
       click_link 'States'
+
       expect(current_path).to eq('/states')
     end
 
     it 'has a link to the list of parks' do
       within('section#nav') do
         expect(page).to have_link("Parks")
+
         click_link "Park"
+
         expect(current_path).to eq('/parks')
       end
     end
@@ -39,10 +43,24 @@ RSpec.describe 'State' do
     it 'has a link to all of the parks in that state' do
       within('section#display') do
         expect(page).to have_link("State Parks in #{@state_1.name}")
+
         click_link "State Parks in #{@state_1.name}"
+
         expect(current_path).to eq("/states/#{@state_1.id}/parks")
       end
     end
 
+    it 'has a link to delete the states' do
+      expect(page).to have_button('Delete Florida')
+      expect(page).to_not have_link('Delete Iowa')
+    end
+
+    it 'actually deletes the state' do
+      expect(page).to have_button('Delete Florida')
+
+      click_button('Delete Florida')
+
+      expect(page).to_not have_content('Florida')
+    end
   end
 end

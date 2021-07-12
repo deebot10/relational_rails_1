@@ -1,34 +1,42 @@
-<h1 style="text-align: center"><img src='https://www.gannett-cdn.com/media/2020/06/29/USATODAY/usatsports/gettyimages-610663444.jpg?crop=1365,768,x0,y0&width=1365&height=768&format=pjpg&auto=webp' alt="States" height=50% width=50% </h1><br/><br/>
+<h1 style="text-align: center"><img src='https://i.etsystatic.com/21069375/r/il/713211/3017011160/il_1140xN.3017011160_bbxr.jpg' alt="States" height=60% width=60%> </h1><br/>
+<h1 style="text-align: center"><iframe src="https://cdn.wallethub.com/wallethub/embed/11987/ecofriendly-geochart.html" width="556" height="347" frameBorder="0" scrolling="no"></iframe>
+  <div style="width:556px;font-size:12px;color:#888;">State Environmental Rankings</div>
+<div style="text-align:center">
+  <a class="btn btn-success" href="/states/new">New State</a>
+</div>
 <% @states.order_created_at.each do |state| %>
-
-
-  <div style="text-align:center"><a style="align: center" class="btn btn-secondary" href=<%="/states/#{state.id}"%>><%= "#{state.name}" %></a></h3>
-  </div>
-  <div style="text-align:center"><img src="https://i.pinimg.com/736x/5e/8f/37/5e8f3769652154c09064e81af4ea0f8a.jpg" height="2%" width="2%">
-  </div>
-
-    <br/>
-  <table class="table table-success table-striped table-hover">
-    <thead></thead>
-    <tr>
+<br/>
+<div style="text-align:center">
+  <a style="align: center" class="btn btn-secondary" href=<%="/states/#{state.id}"%>><%= "#{state.name}" %></a></h3>
+</div>
+<div style="text-align:center">
+  <img src="https://i.pinimg.com/736x/5e/8f/37/5e8f3769652154c09064e81af4ea0f8a.jpg" height="2%" width="2%">
+</div>
+<br/>
+<table class="table table-success table-striped table-hover">
+  <tr>
     <td style="text-align: center">Region of Country: <%= state.region %></td>
-    </tr>
+  </tr>
     <% if state.military_discount == true %>
       <tr>
         <td style="text-align: center">It has a military discount for camping reservations!</td>
       </tr>
-    <% elsif state.military_discount == false %>
+    <% else %>
       <tr>
         <td style="text-align: center">It does not have a military discount for camping reservations.</td>
       </tr>
     <% end %>
-    <tr>
+  <tr>
     <td style="text-align: center"><%= state.name %> has an environmental ranking of: <%= state.green_rank %></td>
-    </tr>
-    <tr>
+  </tr>
+  <tr>
     <td style="text-align: center">Number of Parks in this State: <%= state.parks_count %></td>
-    </tr>
-    <tr>
-  </table>
-  <br/>
+  </tr>
+  <tr>
+    <td style="text-align: center"><%= button_to "Edit #{state.name}", "/states/#{state.id}/edit", method: :get %></td>
+  <tr>
+    <td style="text-align: center"><%= button_to "Delete #{state.name}", "/states/#{state.id}", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." } %></td>
+
+</table>
+<br/>
 <% end %>
