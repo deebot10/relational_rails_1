@@ -10,7 +10,7 @@ class StateparksController < ApplicationController
 
   def create
     state = State.find(params[:state_id])
-    @park = state.parks.create!(state_park_params)
+    park = state.parks.create!(state_park_params)
     redirect_to new_state_park_path(state)
   end
 
