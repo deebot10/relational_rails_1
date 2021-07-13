@@ -67,13 +67,13 @@ RSpec.describe 'StateParks' do
     end
 
     it 'has a button to sort state parks alphabetically' do
-      expect(page).to have_link('Sort by Name')
+      expect(page).to have_link('Sort Parks by Name')
     end
 
     it 'actually sorts state parks alphabetically' do
       expect(@park_1.name).to appear_before(@park_2.name)
 
-      click_link('Sort by Name')
+      click_link('Sort Parks by Name')
       visit "/states/#{@state_1.id}/parks?sort=name"
 
       expect("Collier").to appear_before("Ginny")

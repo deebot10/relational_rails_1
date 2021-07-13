@@ -45,7 +45,7 @@
 
   <a class="btn btn-secondary" href=<%="/parks/#{@park.id}/edit"%>>Update <%="#{@park.name}"%></a>
   <br/><br/>
-  <%= button_to "Delete #{@park.name}", "/parks/#{@park.id}", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
+  <%= button_to "Delete #{@park.name}", "/parks/#{@park.id}",class: "btn btn-danger",  method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
   <br/>
   <a href=<%="/parks/"%> class="btn btn-warning">Back to Parks</a>
 </div>
