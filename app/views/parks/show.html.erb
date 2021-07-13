@@ -2,7 +2,7 @@
   <div class="card-body" align="center">
     <h5 class="card-title">This is the page for <%= "#{@park.name}" %>.</h5>
     <h6 class="card-text">Located in
-      <a href=<%="/states/#{@park.state_id}"%> class="btn btn-small btn-success"><%= @park.state.name%></a> --> the <%= "#{@park.state.region}" %> region of the country.
+      <a href=<%="/states/#{@park.state_id}"%> class="btn btn-small btn-info"><%= @park.state.name%></a> --> the <%= "#{@park.state.region}" %> region of the country.
       </h6>
 <p> </p>
   <% if @park.camping_allowed == true %>
@@ -43,7 +43,7 @@
   <% end %>
   <br/>
 
-  <a class="btn btn-secondary" href=<%="/parks/#{@park.id}/edit"%>>Update <%="#{@park.name}"%></a>
+  <a class="btn btn-success" href=<%="/parks/#{@park.id}/edit"%>>Update <%="#{@park.name}"%></a>
   <br/><br/>
   <%= button_to "Delete #{@park.name}", "/parks/#{@park.id}",class: "btn btn-danger",  method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
   <br/>
