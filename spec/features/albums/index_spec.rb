@@ -64,4 +64,11 @@ RSpec.describe 'Album Index Page' do
 
     expect(page).to_not have_content(@album_6.name)
   end
+
+  it 'has a link to update a album' do
+
+    click_button "Edit #{@album_1.name}"
+
+    expect(current_path).to eq("/albums/#{@album_1.id}/edit")
+  end
 end

@@ -4,4 +4,5 @@
   <p>Name:<%= album.name%></p>
   <p>Number or Tracks:<%= album.number_of_songs%><p>
   <p>Nominated:<%= album.nominated%></p>
+  <%= button_to "Edit #{album.name}", "/albums/#{album.id}/edit", method: :get %>
 <%end%>
