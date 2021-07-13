@@ -9,7 +9,7 @@ RSpec.describe 'Park edit' do
   it 'links to the edit page' do
     visit "/parks/#{@park.id}"
 
-    click_button("Update #{@park.name}")
+    click_link("Update #{@park.name}")
 
     expect(current_path).to eq("/parks/#{@park.id}/edit")
   end
@@ -18,7 +18,7 @@ RSpec.describe 'Park edit' do
     visit "/parks/#{@park.id}"
 
     expect(page).to have_content('Ginny Sprin')
-    click_button 'Update Ginny Sprin'
+    click_link 'Update Ginny Sprin'
     expect(current_path).to eq("/parks/#{@park.id}/edit")
 
     fill_in 'Name', with: 'Ginny Springs'
