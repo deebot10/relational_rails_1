@@ -4,4 +4,5 @@
 <% @artists.each do |artist| %>
   <h3><%= artist.name %></h3>
   <p>Created at:<%= artist.created_at%></p>
+  <%= button_to "Update #{artist.name}", "/artists/#{artist.id}/edit", method: :get%>
 <% end %>
