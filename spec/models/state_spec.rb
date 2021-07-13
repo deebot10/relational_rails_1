@@ -13,7 +13,7 @@ RSpec.describe State do
     end
 
     it 'orders the parent list by created_at' do
-      expect(State.order_created_at).to eq([@state_3, @state_2, @state_1])
+      expect(State.order_created).to eq([@state_3, @state_2, @state_1])
     end
   end
 end

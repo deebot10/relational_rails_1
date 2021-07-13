@@ -8,7 +8,7 @@
 <div style="text-align:center">
   <a class="btn btn-success" href="/states/new">New State</a>
 </div>
-<% @states.order_created_at.each do |state| %>
+<% @states.order_created.each do |state| %>
 <br/>
 <div style="text-align:center">
   <a style="align: center" class="btn btn-info" href=<%="/states/#{state.id}"%>><%= "#{state.name}" %></a></h3>

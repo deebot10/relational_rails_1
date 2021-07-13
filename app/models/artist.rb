@@ -1,9 +1,5 @@
 class Artist < ApplicationRecord
-  has_many :albums, dependent: :destroy     
-  
-  def self.order_created
-    order(created_at: :desc)      
-  end
+  has_many :albums, dependent: :destroy
 
   def album_count
     albums.count
