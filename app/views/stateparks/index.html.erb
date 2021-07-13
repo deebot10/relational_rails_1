@@ -5,7 +5,9 @@
   <div style="text-align:center">
 
     <br/>
-    <a class="btn btn-secondary"  style="align: center" href=<%="/states/#{@states.id}/parks/?sort=name"%>>Sort by Name</a>
+    <a class="btn btn-secondary" style="align: center" href=<%="/states/#{@states.id}/parks/?sort=name"%>>Sort by Name</a>
+  <br/>
+
   <br/>
   <br/>
   <%= form_with url: "/states/#{@states.id}/parks", method: :get, local: true do |form|  %>
