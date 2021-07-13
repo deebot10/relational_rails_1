@@ -64,7 +64,8 @@ RSpec.describe 'Album Index Page' do
 
     expect(page).to_not have_content(@album_6.name)
   end
-
+  
+  #User Story 18
   it 'has a link to update a album' do
 
     click_button "Edit #{@album_1.name}"

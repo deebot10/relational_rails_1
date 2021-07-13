@@ -67,4 +67,12 @@ RSpec.describe 'Hits Index' do
     expect(@album_1.name).to appear_before(@album_3.name) 
     expect(@album_3.name).to_not appear_before(@album_2.name) 
   end
+  
+  #User Story 18
+  it 'has a link to update album' do
+
+    click_button "Edit #{@album_1.name}"
+
+    expect(current_path).to eq("/albums/#{@album_1.id}/edit")
+  end
 end
