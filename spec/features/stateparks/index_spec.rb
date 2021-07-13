@@ -63,5 +63,31 @@ RSpec.describe 'StateParks' do
 
       expect(page).to_not have_content('Ginny Springs')
     end
+
+    it 'has a button to sort state parks alphabetically' do
+      visit "/states/#{@state_1.id}/parks"
+      expect(page).to have_link('Sort by Name')
+    end
+
+    it 'has a form to sort by minimum park rating' do
+      visit "/states/#{@state_1.id}/parks"
+      expect(page).to have_content('Minimum Park Rating')
+    end
+
+    it 'actually submits that form and filters the results' do
+      visit "/states/#{@state_1.id}/parks"
+      fill_in(:park_rating, with: '4.6')
+      click_button('Save')
+      expect(page).to have_content('Ginny Springs')
+      expect(page).to_not have_content('Collier-Seminole State Park')
+    end
+
+    it 'actually submits that form and filters the results' do
+      visit "/states/#{@state_2.id}/parks"
+      fill_in(:park_rating, with: '4.8')
+      click_button('Save')
+      expect(page).to_not have_content('Ginny Springs')
+      expect(page).to_not have_content('Collier-Seminole State Park')
+    end
   end
 end

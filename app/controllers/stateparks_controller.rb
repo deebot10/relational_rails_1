@@ -1,7 +1,13 @@
 class StateparksController < ApplicationController
   def index
     @states = State.find(params[:state_id])
-    @parks = @states.parks
+    if params[:sort]=='name'
+      @parks = @states.parks.alphabatize
+    elsif params[:park_rating]
+      @parks = @states.parks.minimum_rating(params[:park_rating])
+    else
+      @parks = @states.parks
+    end
   end
 
   def new

@@ -4,4 +4,12 @@ class Park < ApplicationRecord
   def self.camping
     where(camping_allowed: :true)
   end
+
+  def self.alphabatize
+    order(:name)
+  end
+
+  def self.minimum_rating(params)
+    where("park_rating >= ?", params)
+  end
 end

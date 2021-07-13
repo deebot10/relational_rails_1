@@ -19,7 +19,7 @@ RSpec.describe 'State Parks creation' do
     fill_in('name', with: 'Test Park')
     check(:camping_allowed)
     check(:kayaking_available)
-    fill_in(:park_rating, with: '23')
+    fill_in(:park_rating, with: '2.3')
     click_button("New Park in #{@state.name}")
 
     expect(page).to have_content('Test Park')
