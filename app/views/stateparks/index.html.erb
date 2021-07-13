@@ -1,11 +1,25 @@
 <table class="table table-success table-striped table-hover">
+
   <h1 align="center">Parks located in <%= @states.name %></h1>
   <thead> </thead>
   <div style="text-align:center">
-    <%= button_to "New Park in #{@states.name}", "/states/#{@states.id}/parks/new", method: :get, local: true %>
-    <br/is there a difference here?<br/>
-    <a class="btn btn-success"  style="align: center" href=<%="/states/#{@states.id}/parks/new"%>><%="New Park in #{@states.name}"%></a>
     <br/>
+      <a class="btn btn-success"  style="align: center" href=<%="/states/#{@states.id}/parks/new"%>><%="New Park in #{@states.name}"%></a>
+      <br/>
+    <br/>
+    <a class="btn btn-warning" style="align: center" href=<%="/states/#{@states.id}/parks/?sort=name"%>>Sort Parks by Name</a>
+
+  <br/>
+  <br/>
+  <%= form_with url: "/states/#{@states.id}/parks", method: :get, local: true do |form|  %>
+  <strong><%= form.label :park_rating, "Minimum Park Rating Desired" %></strong>
+  <br>
+  <%= form.number_field :park_rating, step: 0.1, max: 5 %>
+  <%= form.submit %>
+
+  <% end %>
+  <br/>
+
     <br/>
     <br/>
   </div>
@@ -34,7 +48,7 @@
         <td style="text-align: center">Overall park rating: <%= park.park_rating %></td>
       </tr>
       <tr>
-        <td style="text-align: center">      <%= button_to "Delete #{park.name}", "/parks/#{park.id}", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
+        <td style="text-align: center"><%= button_to "Delete #{park.name}", "/parks/#{park.id}", class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
 </td>
       </tr>
       <tr>

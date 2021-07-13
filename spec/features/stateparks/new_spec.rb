@@ -8,7 +8,7 @@ RSpec.describe 'State Parks creation' do
   it 'links to the new page from the State Parks Index' do
     visit "/states/#{@state.id}/parks"
 
-    click_button("New Park in #{@state.name}")
+    click_link("New Park in #{@state.name}")
 
     expect(current_path).to eq("/states/#{@state.id}/parks/new")
   end
@@ -19,7 +19,7 @@ RSpec.describe 'State Parks creation' do
     fill_in('name', with: 'Test Park')
     check(:camping_allowed)
     check(:kayaking_available)
-    fill_in(:park_rating, with: '23')
+    fill_in(:park_rating, with: '2.3')
     click_button("New Park in #{@state.name}")
 
     expect(page).to have_content('Test Park')

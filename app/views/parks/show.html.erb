@@ -2,42 +2,50 @@
   <div class="card-body" align="center">
     <h5 class="card-title">This is the page for <%= "#{@park.name}" %>.</h5>
     <h6 class="card-text">Located in
-      <a href=<%="/states/#{@park.state_id}"%> class="btn btn-small btn-success"><%= @park.state.name%></a> --> the <%= "#{@park.state.region}" %> region of the country.
+      <a href=<%="/states/#{@park.state_id}"%> class="btn btn-small btn-info"><%= @park.state.name%></a> --> the <%= "#{@park.state.region}" %> region of the country.
       </h6>
 <p> </p>
   <% if @park.camping_allowed == true %>
     <p class="card-text">You can camp at this park!</p>
-  <% elsif @park.camping_allowed == false %>
+    <p class="card-text">
+      <img src="https://lh3.googleusercontent.com/proxy/t-NU186CPDadjEUaOiZVDXVsCoOxsaJmdY2yp1tGGLmaJd7qWfyyA2B6hBFTaVX013g8-eoyFFsyfH8-tP6-Cz_ssg" height=20% width=20%>
+    </p>
+  <% elsif @park.camping_allowed == false ||  @park.camping_allowed == nil %>
     <p class="card-text">You're not allowed to camp at this state park.</p>
+    <p class="card-text">
+      <img src="https://images.campgroundsigns.com/img/lg/K/no-camping-sign-k2-0410.png" height=20% width=20%>
+    </p>
   <% end %>
 
   <% if @park.kayaking_available == true %>
     <p class="card-text">You can kayak at this park!</p>
-  <% elsif @park.kayaking_available == false %>
+    <p class="card-text">
+      <img src="https://i.etsystatic.com/23822999/r/il/46fdbb/2485517150/il_794xN.2485517150_ey6j.jpg" height=20% width=20%>
+    </p>
+  <% elsif @park.kayaking_available == false ||  @park.kayaking_available == nil %>
     <p class="card-text">You aren't able to kayak at this park.</p>
+    <p class="card-text">
+      <img src="https://i.pinimg.com/originals/d2/3c/19/d23c191963aeb554214928079cfc13dc.jpg" height=20% width=20%>
+    </p>
   <% end %>
 
-  <% if @park.kayaking_available == false || @park.camping_allowed == false %>
+  <% if @park.kayaking_available == false || @park.camping_allowed == false || @park.kayaking_available == nil || @park.camping_allowed == nil %>
     <p class="card-text">Regardless,</p>
   <% end %>
 
   <% if @park.park_rating >= 4.6 %>
-    <p class="card-text">It's well worth the visit, as it's rating is <%="#{@park.park_rating}"%> out of 5!</p>
+    <p class="card-text">It's well worth the visit, as it's rating is <strong><%="#{@park.park_rating}"%></strong> out of 5!</p>
   <% elsif @park.park_rating > 4.0 && @park.park_rating < 4.6 %>
-    <p class="card-text">It's probably worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</p>
+    <p class="card-text">It's probably worth the visit, as it's rating is <strong><%= "#{@park.park_rating}" %></strong> out of 5!</p>
   <% elsif @park.park_rating < 4.0 %>
-    <p class="card-text">It might be worth the visit, as it's rating is <%= "#{@park.park_rating}" %> out of 5!</p>
+    <p class="card-text">It might be worth the visit, as it's rating is <strong><%= "#{@park.park_rating}" %></strong> out of 5!</p>
 
   <% end %>
   <br/>
 
-  <a href=<%="/parks/#{@park.id}/edit"%> class="btn btn-secondary">Update <%="#{@park.name}"%></a>
-  <br/>is there a difference here?<br/>
-  <%= button_to "Update #{@park.name}", "/parks/#{@park.id}/edit", method: :get, local: true %>
+  <a class="btn btn-success" href=<%="/parks/#{@park.id}/edit"%>>Update <%="#{@park.name}"%></a>
+  <br/><br/>
+  <%= button_to "Delete #{@park.name}", "/parks/#{@park.id}",class: "btn btn-danger",  method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
   <br/>
-  <%= button_to "Delete #{@park.name}", "/parks/#{@park.id}", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
-
-  <br/>
-
-  <a href=<%="/parks/"%> class="btn btn-secondary">Back to Parks</a>
+  <a href=<%="/parks/"%> class="btn btn-warning">Back to Parks</a>
 </div>

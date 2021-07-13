@@ -28,11 +28,10 @@
 
     <a href=<%="/parks/#{park.id}"%> class="btn btn-primary">Head to <%= park.name %></a>
     <br/><br/>
-    <%= button_to "Update #{park.name}", "/parks/#{park.id}/edit", method: :get, local: true %>
-    <br/>
-    <%= button_to "Delete #{park.name}", "/parks/#{park.id}", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
+    <a href=<%="/parks/#{park.id}/edit"%> class="btn btn-info"><%="Update #{park.name}"%></a>
+    <br/><br/>
+    <%= button_to "Delete #{park.name}", "/parks/#{park.id}", class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
 
-    <br/>
     <br/>
   </div>
 </div>
