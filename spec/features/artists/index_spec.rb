@@ -20,7 +20,6 @@ RSpec.describe 'Artist index page' do
 
   #User Story 6
   it 'Artist show created_at for each record' do
-    expect(@artist_4.name).to appear_before(@artist_3.name)
 
     expect(page).to have_content(@artist_1.created_at)
     expect(page).to have_content(@artist_2.created_at)
@@ -72,5 +71,23 @@ RSpec.describe 'Artist index page' do
     expect(current_path).to eq('/artists')
     
     expect(page).to have_content('Drake') 
+  end
+  
+  #User Story 17
+  it 'has a link to update a parent' do
+
+    click_button "Update #{@artist_1.name}"
+
+    expect(current_path).to eq("/artists/#{@artist_1.id}/edit")
+  end
+  
+  #User Story 22
+  it 'has a link to delete artists' do
+
+    click_button "Delete #{@artist_1.name}"
+
+    expect(current_path).to eq('/artists')
+
+    expect(page).to_not have_content(@artist_1.name)
   end
 end
