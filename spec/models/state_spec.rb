@@ -15,5 +15,9 @@ RSpec.describe State do
     it 'orders the parent list by created_at' do
       expect(State.order_created).to eq([@state_3, @state_2, @state_1])
     end
+
+    it 'can display the number of children on the parent list ' do
+      expect(@state_1.parks_count).to eq(0)
+    end
   end
 end
