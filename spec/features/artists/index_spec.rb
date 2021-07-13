@@ -80,7 +80,8 @@ RSpec.describe 'Artist index page' do
 
     expect(current_path).to eq("/artists/#{@artist_1.id}/edit")
   end
-
+  
+  #User Story 22
   it 'has a link to delete artists' do
 
     click_button "Delete #{@artist_1.name}"

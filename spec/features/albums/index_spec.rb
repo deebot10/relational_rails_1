@@ -72,4 +72,14 @@ RSpec.describe 'Album Index Page' do
 
     expect(current_path).to eq("/albums/#{@album_1.id}/edit")
   end
+
+  #User Story 23
+  it 'has a link to delete child' do
+
+    click_button "Delete #{@album_1.name}"
+
+    expect(current_path).to eq('/albums')
+
+    expect(page).to_not have_content(@album_1.name)
+  end
 end
