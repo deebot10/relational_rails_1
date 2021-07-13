@@ -39,7 +39,9 @@
   <tr>
     <td style="text-align: center"><%= button_to "Edit #{state.name}", "/states/#{state.id}/edit", class: "btn btn-secondary", method: :get %></td>
   <tr>
-    <td style="text-align: center"><%= button_to "Delete #{state.name}", "/states/#{state.id}",class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." } %></td>
+    <td style="text-align: center"><%= button_to "Delete #{state.name}", "/states/#{state.id}",class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." } %>
+    </td>
+  </tr>
 
 </table>
 <br/>
