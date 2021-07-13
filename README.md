@@ -30,11 +30,11 @@ Our challenge was to build a functioning web app consisting of multiple relation
 Learning goals and areas of focus consisted of:
 
 - Apply principles of flow control across multiple methods
-- Incorporating databases into program manually
-- Understand & implement file IO and class interaction patterns
-- Practice breaking a program into logical components
-- Apply Enumerable techniques in a real context
-- Apply access scope and encapsulation practices for a manually built API
+- Design a one to many relationship using a schema designer
+- Write migrations to create tables with columns of varying data types and foreign keys.
+- Use Rails to create web pages that allow users to CRUD resources
+- Create instance and class methods on a Rails model that use ActiveRecord methods and helpers
+- Write model and feature tests that fully cover data logic and potential user behavior
 
 [Technical Requirements](https://backend.turing.edu/module2/projects/relational_rails)
 
@@ -45,7 +45,9 @@ Learning goals and areas of focus consisted of:
 - Postico
 - Capybara
 - Launchy
+- Orderly
 - SimpleCov
+- Git/GitHub
 - HTML
 - CSS
 - Bootstrap
@@ -53,7 +55,7 @@ Learning goals and areas of focus consisted of:
 - Pry
 - Atom
 - VS Code
-- GitHub
+
 
 ### <ins>Contributors</ins>
 
