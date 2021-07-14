@@ -56,7 +56,7 @@ Album.destroy_all
 @state_5 = State.create!(name: 'Mississippi', region: 'Southeast', military_discount: false, green_rank: 48)
 @park_9 = @state_5.parks.create!(name: 'Shepard State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.3)
 @park_10 = @state_5.parks.create!(name: "Clarkco State Park", camping_allowed: true, kayaking_available: true, park_rating: 4.6)
-@park_11 = @state_6.parks.create!(name: "Franklin State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.4)
+@park_11 = @state_5.parks.create!(name: "Franklin State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.4)
 
 @state_6 = State.create!(name: 'Vermont', region: 'Northeast', military_discount: false, green_rank: 1)
 @park_12 = @state_6.parks.create!(name: 'Grand Isle State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.8)
