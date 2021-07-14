@@ -16,8 +16,8 @@
   </div>
   <br>
   <div class="form-control" align="center" >
-    <%= form.text_field :park_rating %>
-    <%= form.label :park_rating %>
+    <%= form.label :park_rating, "Park rating out of 5" %>
+    <%= form.number_field :park_rating, step: 0.1, max: 5 %>
   </div>
   <br>
   <div class="form-group" align="center" >

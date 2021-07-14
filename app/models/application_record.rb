@@ -6,7 +6,7 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def self.alphabatize
-    order(:name)
+    order(Arel.sql("lower(name)"))
   end
 
 end
