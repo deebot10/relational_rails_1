@@ -25,7 +25,6 @@ RSpec.describe Park do
 
     it 'can filter the results by minimum park rating' do
       expect(Park.minimum_rating(4.6)).to eq([@park_1, @park_3])
-
     end
   end
 end
