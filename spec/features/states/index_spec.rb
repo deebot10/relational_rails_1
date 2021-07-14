@@ -87,6 +87,7 @@ RSpec.describe 'State' do
       expect(this).to appear_before(that)
       expect(that).to appear_before(the_other)
       click_link "Sort States by Quantity of Parks"
+
       expect(the_other).to appear_before(that)
       expect(the_other).to appear_before(this)
       expect(that).to appear_before(this)
