@@ -85,4 +85,15 @@ RSpec.describe 'Hits Index' do
 
     expect(page).to_not have_content(@album_1.name)
   end
+
+  #   User Story 21
+  it 'Display Records Over a Given Threshold' do
+
+    fill_in(:number_of_songs, with: 12)
+    click_button 'Save'
+
+    expect(page).to have_content(@album_1.name)
+    expect(page).to have_content(@album_3.name)
+    expect(page).to_not have_content(@album_2.name)
+  end
 end
