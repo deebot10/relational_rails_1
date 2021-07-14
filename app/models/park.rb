@@ -8,4 +8,5 @@ class Park < ApplicationRecord
   def self.minimum_rating(params)
     where("park_rating >= ?", params)
   end
+  
 end
