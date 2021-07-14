@@ -40,6 +40,7 @@ Album.destroy_all
 @state_1 = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 42)
 @park_1 = @state_1.parks.create!(name: 'Ginny Springs', camping_allowed: true, kayaking_available: true, park_rating: 4.6)
 @park_2 = @state_1.parks.create!(name: 'Collier-Seminole State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.4)
+@park_11 = @state_1.parks.create!(name: "Biscayne State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.3)
 
 @state_2 = State.create!(name: 'Maine', region: 'Northeast', military_discount: true, green_rank: 12)
 @park_3 = @state_2.parks.create!(name: 'Sebago Lake State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.7)
@@ -56,7 +57,6 @@ Album.destroy_all
 @state_5 = State.create!(name: 'Mississippi', region: 'Southeast', military_discount: false, green_rank: 48)
 @park_9 = @state_5.parks.create!(name: 'Shepard State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.3)
 @park_10 = @state_5.parks.create!(name: "Clarkco State Park", camping_allowed: true, kayaking_available: true, park_rating: 4.6)
-@park_11 = @state_5.parks.create!(name: "Franklin State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.4)
 
 @state_6 = State.create!(name: 'Vermont', region: 'Northeast', military_discount: false, green_rank: 1)
 @park_12 = @state_6.parks.create!(name: 'Grand Isle State Park', camping_allowed: true, kayaking_available: true, park_rating: 4.8)
