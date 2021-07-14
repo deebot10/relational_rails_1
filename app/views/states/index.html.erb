@@ -6,9 +6,12 @@
     <span style="width:556px;font-size:12px;color:#888">State Environmental Rankings</span>
   </div>
 <div style="text-align:center">
+  <div style="text-align:center">
+    <a class="btn btn-warning" style="align: center" href=<%="/states/?sort=quant"%>>Sort States by Quantity of Parks</a>
+  </div>
   <a class="btn btn-success" href="/states/new">New State</a>
 </div>
-<% @states.order_created.each do |state| %>
+<% @states.each do |state| %>
 <br/>
 <div style="text-align:center">
   <a style="align: center" class="btn btn-info" href=<%="/states/#{state.id}"%>><%= "#{state.name}" %></a></h3>

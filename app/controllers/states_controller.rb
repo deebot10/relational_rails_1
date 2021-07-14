@@ -1,6 +1,11 @@
 class StatesController < ApplicationController
   def index
     @states = State.all
+    if params[:sort]=='quant'
+      @states = @states.quant
+    else
+      @states = @states.order_created
+    end
   end
 
   def show

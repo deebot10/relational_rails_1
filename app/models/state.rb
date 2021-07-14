@@ -5,4 +5,8 @@ class State < ApplicationRecord
     parks.count
   end
 
+  def self.quant
+    joins(:parks).group("states.id").order("COUNT(states.id) DESC")
+  end
+
 end
