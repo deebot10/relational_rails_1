@@ -4,6 +4,8 @@ class HitsController < ApplicationController
 
     if params[:sort] == 'true'
       @albums = @artists.albums.alphabatize
+    elsif params[:number_of_songs]
+      @albums = @artists.albums.num_of_tracks(params[:number_of_songs])  
     else 
       @albums = @artists.albums
     end

@@ -24,30 +24,6 @@ Rails.application.routes.draw do
   # post '/parks', to: 'stateparks#create'
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   #D
   # Create an Artist
   get '/artists/new',             to: 'artists#new'

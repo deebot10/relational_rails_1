@@ -1,5 +1,12 @@
 <h1>Artist Albums</h1>
 
+<%= form_with url: "/artists/#{@artists.id}/albums", method: :get, local: true do |form| %>
+  <%= form.label :number_of_songs, "Number of Tracks"%>
+
+  <%= form.number_field :number_of_songs %>
+  <%= form.submit%>
+<%end%>
+
 <h2><%= @artists.name%></h2>
 <p><%= link_to 'Sort by Title', "/artists/#{@artists.id}/albums?sort=true" %></p>
 
