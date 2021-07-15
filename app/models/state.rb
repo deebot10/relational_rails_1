@@ -13,7 +13,11 @@ class State < ApplicationRecord
     # joins("INNER JOIN parks on parks.state_id = states.id").group("states.id").order("COUNT(states.id) DESC")
 
     #LEFT JOIN allows for parent records with null children to display as well.  INNER JOIN restricts results to parents w/ children
-    joins("LEFT JOIN parks ON parks.state_id = states.id").group("states.id").order(Arel.sql("COUNT(states.id) DESC"))
+
+    # joins("LEFT JOIN parks ON parks.state_id = states.id").group("states.id").order(Arel.sql("COUNT(states.id) DESC"))
+    # ▲ is the same as same as ▼
+    left_joins(:parks).group(:id).order(Arel.sql("COUNT(states.id) DESC"))
+
   end
 
 end
