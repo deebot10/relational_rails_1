@@ -15,7 +15,7 @@ RSpec.describe Park do
       @park_4 = @state_2.parks.create!(name: "Wolfe's Neck Woods State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.5)
     end
 
-    it 'displays on those which allow camping' do
+    it 'can display only those which allow camping' do
       expect(Park.camping).to eq([@park_1, @park_2, @park_3])
     end
 
@@ -25,7 +25,6 @@ RSpec.describe Park do
 
     it 'can filter the results by minimum park rating' do
       expect(Park.minimum_rating(4.6)).to eq([@park_1, @park_3])
-
     end
   end
 end

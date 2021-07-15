@@ -17,7 +17,6 @@ RSpec.describe 'State creation' do
     fill_in('green_rank', with: '29')
     click_button("Create State")
 
-    # new_state_id = State.last.id
     expect(page).to have_content('Georgia')
     expect(current_path).to eq('/states')
   end

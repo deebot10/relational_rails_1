@@ -13,7 +13,6 @@ class StatesController < ApplicationController
   end
 
   def new
-    # @state = State.create!(state_params)
   end
 
   def create
@@ -38,7 +37,6 @@ class StatesController < ApplicationController
   end
 
 private
-#only available inside the class theyre defined in
   def state_params
     params.permit(:id, :name, :region, :military_discount, :green_rank)
   end

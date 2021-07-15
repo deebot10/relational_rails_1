@@ -4,6 +4,7 @@ RSpec.describe 'State edit' do
   before(:each) do
     @state = State.create!(name: 'Florida', region: 'Southeast', military_discount: true, green_rank: 29)
   end
+  
   it 'links to the edit page' do
     visit '/states'
 

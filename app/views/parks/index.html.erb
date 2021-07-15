@@ -30,7 +30,8 @@
     <br/><br/>
     <a href=<%="/parks/#{park.id}/edit"%> class="btn btn-info"><%="Update #{park.name}"%></a>
     <br/><br/>
-    <%= button_to "Delete #{park.name}", "/parks/#{park.id}", class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
+    <%= button_to "Delete #{park.name}", "/parks/#{park.id}", class: "btn btn-danger", method: :delete,
+     data: { confirm: "Are you sure? It's a crazy world out there." }, local: true %>
 
     <br/>
   </div>

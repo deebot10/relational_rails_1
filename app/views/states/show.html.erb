@@ -1,30 +1,30 @@
 <section id='display'>
   <table class="table table-success table-striped table-hover">
-      <thead>
-        <div style="text-align:center">
-          <a style="align: center" class="btn btn-primary" href=<%="/states/#{@state.id}/parks"%>>State Parks in <%= "#{@state.name}" %></a>
-        </div>
-      </thead>
-      <br/>
-        <tr>
-          <th style="text-align: center">This is the page for <%= "#{@state.name}" %>.</th>
-        <tr>
-          <td style="text-align: center">It is located in the <%= "#{@state.region}" %> region.</td>
-        </tr>
-          <% if @state.military_discount == true %>
-            <tr>
-              <td style="text-align: center">It has a military discount for camping reservations!</td>
-            </tr>
-          <% elsif @state.military_discount == false %>
-            <tr>
-              <td style="text-align: center">It does not have a military discount for camping reservations.</td>
-            </tr>
-          <% end %>
-            <tr>
-              <td style="text-align: center">This state has an environmental ranking of: <%= @state.green_rank %></td>
-            <tr>
-              <td style="text-align: center">Number of Parks in this State: <%= @state.parks_count %></td>
-            </tr>
+    <thead>
+      <div style="text-align:center">
+        <a style="align: center" class="btn btn-primary" href=<%="/states/#{@state.id}/parks"%>>State Parks in <%= "#{@state.name}" %></a>
+      </div>
+    </thead>
+    <br/>
+    <tr>
+      <th style="text-align: center">This is the page for <%= "#{@state.name}" %>.</th>
+    <tr>
+      <td style="text-align: center">It is located in the <%= "#{@state.region}" %> region.</td>
+    </tr>
+    <% if @state.military_discount == true %>
+      <tr>
+        <td style="text-align: center">It has a military discount for camping reservations!</td>
+      </tr>
+    <% elsif @state.military_discount == false %>
+      <tr>
+        <td style="text-align: center">It does not have a military discount for camping reservations.</td>
+      </tr>
+    <% end %>
+      <tr>
+        <td style="text-align: center">This state has an environmental ranking of: <%= @state.green_rank %></td>
+      <tr>
+        <td style="text-align: center">Number of Parks in this State: <%= @state.parks_count %></td>
+      </tr>
 
   </table>
 
