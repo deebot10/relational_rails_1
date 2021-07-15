@@ -23,8 +23,8 @@ class ParksController < ApplicationController
     redirect_to '/parks'
   end
 
-  #only available inside the class theyre defined in
-    def park_params
-      params.permit(:name, :kayaking_available, :park_rating, :camping_allowed, :state_id)
-    end
+  private
+  def park_params
+    params.permit(:name, :kayaking_available, :park_rating, :camping_allowed, :state_id)
+  end
 end
