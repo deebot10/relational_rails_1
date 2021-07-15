@@ -78,20 +78,15 @@ RSpec.describe 'State' do
       @park_5 = @state_2.parks.create!(name: "Wolfe's Neck Woods State Park", camping_allowed: false, kayaking_available: false, park_rating: 4.5)
       @park_6 = @state_3.parks.create!(name: 'Crater Lake', camping_allowed: true, kayaking_available: true, park_rating: 4.6)
 
-      this = 'Washington'
-      that = 'Maine'
-      the_other = 'Florida'
-      no_parks = 'Oregon'
-
-      expect(no_parks).to appear_before(this)
-      expect(this).to appear_before(that)
-      expect(that).to appear_before(the_other)
+      expect(@state_4.name).to appear_before(@state_3.name)
+      expect(@state_3.name).to appear_before(@state_2.name)
+      expect(@state_2.name).to appear_before(@state_1.name)
       click_link "Sort States by Quantity of Parks"
 
-      expect(the_other).to appear_before(that)
-      expect(the_other).to appear_before(this)
-      expect(that).to appear_before(this)
-      expect(this).to appear_before(no_parks)
+      expect(@state_1.name).to appear_before(@state_2.name)
+      expect(@state_2.name).to appear_before(@state_3.name)
+      expect(@state_3.name).to appear_before(@state_4.name)
+
     end
   end
 end
